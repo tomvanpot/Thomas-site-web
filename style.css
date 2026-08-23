@@ -13,18 +13,12 @@ a { color: inherit; text-decoration: none; }
   --line: #232326;
   --accent: #c9a875;
   --moon: #cdd9e6;
-  --serif: 'Fraunces', Georgia, serif;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif: 'Josefin Sans', 'Fraunces', Georgia, serif;
+  --sans: 'Josefin Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 body {
-  background:
-    radial-gradient(ellipse 90% 55% at 50% 0%, rgba(205, 217, 230, 0.1), transparent 62%),
-    linear-gradient(180deg, rgba(8, 8, 10, 0.45) 0%, rgba(8, 8, 10, 0.55) 100%),
-    url("assets/site-bg-teal.jpg");
-  background-size: auto, auto, cover;
-  background-position: center, center, center;
-  background-attachment: fixed, fixed, fixed;
+  background: #000;
   color: var(--ink);
   font-family: var(--sans);
   font-weight: 300;
@@ -53,20 +47,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 38px 6vw;
-  background: rgba(6, 7, 8, 0.55);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.nav::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("assets/nav-bg-smoke.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3;
-  pointer-events: none;
+  background: #000;
 }
 
 .nav::after {
@@ -93,15 +74,18 @@ body {
 }
 
 .nav__name {
-  font-family: var(--serif);
-  font-size: 18px;
-  letter-spacing: 0.03em;
+  font-family: 'Josefin Sans', var(--sans);
+  font-weight: 300;
+  font-size: 22px;
+  letter-spacing: 0.06em;
 }
 
 .nav__role {
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  opacity: 0.75;
+  font-family: 'Josefin Sans', var(--sans);
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
 }
 
 .nav__affiliations {
@@ -109,7 +93,7 @@ body {
   font-size: 10px;
   letter-spacing: 0.03em;
   line-height: 1.5;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .nav__links {
@@ -177,7 +161,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  padding: 15vh 0 130px;
+  padding: calc(var(--nav-height, 150px) + 34px) 0 130px;
   overflow: hidden;
 }
 
@@ -220,7 +204,7 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 36px;
+  gap: 22px;
 }
 
 .hero__category {
@@ -228,10 +212,11 @@ body {
   border: none;
   padding: 0;
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-weight: 400;
-  font-size: clamp(14px, 1.6vw, 20px);
-  letter-spacing: 0.02em;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--moon);
   cursor: pointer;
   opacity: 0.4;
@@ -288,48 +273,15 @@ body {
   opacity: 1;
 }
 
-.hero__tabs-wrapper {
-  margin-top: 18px;
-}
-
-.hero__tabs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.hero__tabs[hidden] {
-  display: none;
-}
-
-.hero__tab {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--ink-dim);
-  cursor: pointer;
-  opacity: 1;
-  transition: color 0.3s ease, opacity 0.3s ease;
-}
-
-.hero__tab.is-active {
-  color: var(--accent);
-  opacity: 1;
-}
-
-.hero__tab:hover {
-  color: var(--accent);
-}
-
 .poster-wall[hidden],
 .hero__panel[hidden] {
   display: none;
+}
+
+/* Page-view sections (À propos, Contact, CV): hidden by default, only
+   revealed via their nav link click — never reachable by scrolling. */
+section[hidden] {
+  display: none !important;
 }
 
 .hero__panel {
@@ -361,45 +313,85 @@ body {
   position: relative;
   z-index: 1;
   width: 100%;
-  margin-top: 56px;
+  margin-top: 32px;
   padding: 0 4vw;
   box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
-  line-height: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   opacity: 1;
   transition: opacity 0.35s ease;
 }
 
-.poster-wall a.poster-link {
+.poster-wall > img,
+.poster-wall > .poster-link {
   display: block;
   line-height: 0;
 }
 
-.poster-wall a.poster-link img {
+/* Separates Longs-métrages from Courts-métrages within the single merged
+   Fiction mosaic — spans the full grid width regardless of column count. */
+.poster-wall__divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  margin: 12px 0;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 117, 0.7) 15%, rgba(201, 168, 117, 0.7) 85%, transparent);
+}
+
+.poster-wall img[data-film] {
+  cursor: pointer;
+}
+
+.poster-wall .poster-link img {
   cursor: pointer;
 }
 
 .poster-wall img {
   position: relative;
-  height: 260px;
-  width: auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
+  display: block;
   filter: grayscale(0.25) brightness(0.95) saturate(1);
   transition: filter 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
   will-change: transform;
-  box-shadow: 0 0 0 1px rgba(201, 168, 117, 0.5);
 }
 
 .poster-wall img:hover {
   transform: scale(1.04);
   filter: grayscale(0.25) brightness(0.55) saturate(0.9);
   z-index: 2;
-  box-shadow:
-    0 0 0 1px rgba(201, 168, 117, 0.5),
-    0 20px 40px -10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* Documentary posters vary a lot more in native aspect ratio than the
+   fiction ones (some are near-square). Rather than forcing them into a
+   fixed box (which either crops them or leaves black letterbox bars),
+   just let each one keep its own natural ratio — sizes vary poster to
+   poster, but nothing is cropped or bordered by black margins. */
+#wall-docs-all img {
+  aspect-ratio: auto;
+}
+
+/* Courts posters range from 2:3 up to exactly 3:4 in native ratio. Fitting
+   them all into a 3:4 box with `contain` left the taller ones narrower than
+   the rest (contain shrinks to whichever dimension hits the box first, and
+   for these it was always width). Using 2:3 — the narrowest ratio in the
+   set — as the box instead means every poster is always width-constrained,
+   so they all render at the exact same width; only the amount of empty
+   space above/below varies, which is far less noticeable side by side. */
+.poster-wall .poster--short {
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  background: #000;
+}
+
+/* For posters whose top edge carries important content (cast/credits,
+   titles) that a default center-crop would cut into — bias the crop so
+   only the bottom is trimmed instead. */
+.poster-wall .poster--top {
+  object-position: top;
 }
 
 .poster-wall.is-grouping img {
@@ -408,6 +400,22 @@ body {
 
 .poster-wall.is-landing img {
   animation: poster-landing-in 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* The clip poster is a wide landscape still, not a portrait poster like the
+   rest of the site — forcing it into the shared 3-column / 3:4 grid was
+   cropping almost the entire image away. It's the only item in this wall,
+   so give it its own single, centered, landscape-ratio box instead. */
+#wall-clips {
+  grid-template-columns: 1fr;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#wall-clips img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 /* ---------- clip caption (single-item "Clips" tab) ---------- */
@@ -530,12 +538,12 @@ section {
 }
 
 #apropos {
-  padding-top: 44px;
-  padding-bottom: 70px;
+  padding-top: calc(var(--nav-height, 150px) + 20px);
+  padding-bottom: 32px;
 }
 
 .apropos--gallery {
-  padding-top: 44px;
+  padding-top: 32px;
 }
 
 #films {
@@ -547,8 +555,13 @@ section {
 }
 
 #filmo {
-  padding-top: 70px;
+  padding-top: calc(var(--nav-height, 150px) + 20px);
   padding-bottom: 70px;
+}
+
+#contact {
+  padding-top: calc(var(--nav-height, 150px) + 20px);
+  padding-bottom: 50px;
 }
 
 #films,
@@ -566,6 +579,7 @@ section {
 #films::before,
 #filmo::before,
 #apropos::before,
+#contact::before,
 .apropos--gallery::before {
   content: '';
   position: absolute;
@@ -795,28 +809,14 @@ section {
 
 /* ---------- apropos ---------- */
 .apropos__body {
-  max-width: 1000px;
-  display: flex;
-  align-items: flex-start;
-  gap: 56px;
-  flex-wrap: wrap;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .apropos__text {
-  flex: 1 1 420px;
   max-width: 620px;
-}
-
-.apropos__photo {
-  flex: 0 0 auto;
-}
-
-.apropos__photo img {
-  display: block;
-  width: 320px;
-  height: auto;
-  filter: grayscale(1);
-  border: 1px solid rgba(201, 168, 117, 0.5);
+  margin: 0 auto;
 }
 
 .apropos__body p {
@@ -836,7 +836,6 @@ section {
 
 .contact__body {
   max-width: 1000px;
-  margin-top: 56px;
 }
 
 .apropos__gallery-section {
@@ -1040,6 +1039,140 @@ section {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* ---------- project lightbox (fiche film) ---------- */
+.project-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vh 4vw;
+  background: rgba(6, 6, 8, 0.96);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.project-lightbox[hidden] {
+  display: none;
+}
+
+.project-lightbox.is-visible {
+  opacity: 1;
+}
+
+.project-lightbox__stage {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.project-lightbox__media {
+  flex: 1.3;
+  min-width: 0;
+}
+
+.project-lightbox__frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.7);
+}
+
+.project-lightbox__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.project-lightbox__info {
+  flex: 1;
+  min-width: 0;
+  color: var(--ink);
+}
+
+.project-lightbox__title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.project-lightbox__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--sans);
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: var(--ink-dim);
+  margin-bottom: 22px;
+}
+
+.project-lightbox__meta strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.project-lightbox__section {
+  margin-bottom: 22px;
+}
+
+.project-lightbox__section h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.project-lightbox__section p {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+}
+
+.project-lightbox__section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+
+.project-lightbox__section ul li::before {
+  content: '• ';
+  color: var(--accent);
+}
+
+.project-lightbox__section ul li.is-self {
+  color: var(--ink);
+}
+
+@media (max-width: 820px) {
+  .project-lightbox__stage {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .project-lightbox {
+    padding: 5vh 5vw;
+  }
 }
 
 .apropos__formation {
@@ -1250,13 +1383,11 @@ section {
   }
   .filmo__role, .filmo__note { text-align: left; }
 
-  .poster-wall img { height: 130px; }
+  .poster-wall { grid-template-columns: repeat(2, 1fr); }
 
   .hero__categories { gap: 20px; }
 
   section { padding: 90px 7vw; }
   .nav { padding: 22px 7vw; }
 
-  .apropos__body { flex-direction: column-reverse; gap: 24px; }
-  .apropos__photo img { width: 130px; }
 }

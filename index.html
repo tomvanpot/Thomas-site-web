@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -30,8 +30,9 @@
 <header class="nav" id="nav">
   <nav class="nav__links">
     <a href="#top" id="navFilmsLink">Films</a>
-    <a href="#apropos" data-en="About">À propos</a>
-    <a href="#filmo">CV</a>
+    <a href="#apropos" id="navAproposLink" data-en="About">À propos</a>
+    <a href="#filmo" id="navCvLink">CV</a>
+    <a href="#contact" id="navContactLink" data-en="Contact">Contact</a>
   </nav>
   <div class="nav__id">
     <a href="#top" id="navNameLink" class="nav__name">Thomas Van Pottelberge</a>
@@ -55,228 +56,84 @@
         <button type="button" class="hero__category hero__category--white" data-category="series" role="tab" aria-selected="false" data-en="Series">Séries</button>
         <button type="button" class="hero__category hero__category--white" data-category="clips" role="tab" aria-selected="false" data-en="Music Videos">Clips</button>
       </div>
-      <div class="hero__tabs-wrapper">
-        <div class="hero__tabs" data-owner="cinema" role="tablist">
-          <button type="button" class="hero__tab is-active" data-target="wall-longs" role="tab" aria-selected="true" data-en="Feature Films">Longs-métrages</button>
-          <button type="button" class="hero__tab" data-target="wall-courts" role="tab" aria-selected="false" data-en="Short Films">Courts-métrages</button>
-        </div>
-        <div class="hero__tabs" data-owner="docs" role="tablist" hidden>
-          <button type="button" class="hero__tab" data-target="wall-docs-series" role="tab" aria-selected="false" data-en="Series">Séries</button>
-          <button type="button" class="hero__tab" data-target="wall-docs-unitaire" role="tab" aria-selected="false" data-en="Standalone">Unitaires</button>
-        </div>
-      </div>
     </div>
 
     <div class="hero__panel" data-panel="cinema">
       <div class="poster-wall" id="wall-longs">
-        <a href="https://www.youtube.com/watch?v=crsx7_2vrn0" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/little-jaffna-poster.jpg" alt="Affiche Little Jaffna" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=aMZj--wF9ko" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/les-meutes-poster.jpg" alt="Affiche Les Meutes" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=SK2BaJHtT9s" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/freda-poster.jpg" alt="Affiche Freda" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=mextUdIDi_E" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/le-barrage-poster.jpg" alt="Affiche Le Barrage" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=hY4QaI8wxOk" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/you-resemble-me-poster.jpg" alt="Affiche You Resemble Me" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=PXBm0GYV4Zo" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/diamantino-poster.jpg" alt="Affiche Diamantino" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=ZFsSZcy_NBA" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/dernier-soleil.jpg" alt="Affiche Dernier Soleil" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=mUG3RV-eQ2w" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/merveilles.jpg" alt="Affiche Merveilles à Montfermeil" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=GjHIUBplrUw" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/manodrome-poster.jpg" alt="Affiche Manodrome" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=JS1adp131oE" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/back-to-the-family-poster.jpg" alt="Affiche Back to the Family" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=Kpet4uKoEeY" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/chandelle-poster.jpg" alt="Affiche À la lueur de la chandelle" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=mHFTXh-Lor0" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/en-mille-morceaux-poster.jpg" alt="Affiche En mille morceaux" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=uUKdBCuouqg" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/blockbuster-poster.jpg" alt="Affiche Blockbuster" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=msIwHYFMOes" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/bizarre-poster.jpg" alt="Affiche Bizarre" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=i4zapAP6cAY" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/gold-songs-poster.jpg" alt="Affiche Gold Songs" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=CUAj9Qw_6EI" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/sans-toi-poster.jpg" alt="Affiche Sans Toi" loading="lazy"></a>
-      </div>
-
-      <div class="poster-wall" id="wall-courts" hidden>
-        <img src="assets/wall/la-ligne-de-vie-poster-v3.jpg" alt="Affiche La ligne de vie" loading="lazy">
-        <img src="assets/wall/mardochi-poster.jpg" alt="Affiche Mardochi" loading="lazy">
-        <a href="https://www.youtube.com/watch?v=AWiRa7KZY4U" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/na-marei-poster.jpg" alt="Affiche Na Marei, l'invisible" loading="lazy"></a>
-        <img src="assets/wall/la-grande-ourse-poster.jpg" alt="Affiche La Grande Ourse" loading="lazy">
-        <img src="assets/wall/the-loyal-man-poster.jpg" alt="Affiche The Loyal Man" loading="lazy">
-        <img src="assets/wall/coqueluche-poster.jpg" alt="Affiche Coqueluche" loading="lazy">
-        <img src="assets/wall/homme-sage-poster.jpg" alt="Affiche Homme sage" loading="lazy">
-        <img src="assets/wall/mamina-poster.jpg" alt="Affiche Mamina" loading="lazy">
-        <img src="assets/wall/apnees-poster.jpg" alt="Affiche Apnées" loading="lazy">
-        <img src="assets/wall/simone-est-partie-poster.jpg" alt="Affiche Simone est partie" loading="lazy">
-        <img src="assets/wall/lovena-poster.jpg" alt="Affiche Lovena" loading="lazy">
-        <img src="assets/wall/les-eveillees-poster.jpg" alt="Affiche Les Éveillées" loading="lazy">
-        <img src="assets/wall/particules-fines-poster.jpg" alt="Affiche Particules Fines" loading="lazy">
-        <img src="assets/wall/jeune-fille-de-pierre-poster.jpg" alt="Affiche Les extraordinaires mésaventures de la jeune fille de pierre" loading="lazy">
-        <img src="assets/wall/tigre-poster.jpg" alt="Affiche Tigre" loading="lazy">
-        <img src="assets/wall/little-jaffna-court-poster.jpg" alt="Affiche Little Jaffna" loading="lazy">
+        <div class="poster-link" data-film="marie-madeleine"><img src="assets/marie-madeleine-v7.jpg" alt="Affiche Marie Madeleine" loading="lazy"></div>
+        <a href="https://www.youtube.com/watch?v=crsx7_2vrn0" target="_blank" rel="noopener" class="poster-link" data-film="little-jaffna"><img src="assets/wall/little-jaffna-poster.jpg" alt="Affiche Little Jaffna" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=aMZj--wF9ko" target="_blank" rel="noopener" class="poster-link" data-film="les-meutes"><img src="assets/wall/les-meutes-poster.jpg" alt="Affiche Les Meutes" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=SK2BaJHtT9s" target="_blank" rel="noopener" class="poster-link" data-film="freda"><img src="assets/wall/freda-poster.jpg" alt="Affiche Freda" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=mextUdIDi_E" target="_blank" rel="noopener" class="poster-link" data-film="le-barrage"><img src="assets/wall/le-barrage-poster.jpg" alt="Affiche Le Barrage" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=GjHIUBplrUw" target="_blank" rel="noopener" class="poster-link" data-film="manodrome"><img src="assets/wall/manodrome-poster.jpg" alt="Affiche Manodrome" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=JS1adp131oE" target="_blank" rel="noopener" class="poster-link" data-film="back-to-the-family"><img src="assets/wall/back-to-the-family-poster.jpg" alt="Affiche Back to the Family" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=PXBm0GYV4Zo" target="_blank" rel="noopener" class="poster-link" data-film="diamantino"><img src="assets/wall/diamantino-poster.jpg" alt="Affiche Diamantino" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=hY4QaI8wxOk" target="_blank" rel="noopener" class="poster-link" data-film="you-resemble-me"><img src="assets/wall/you-resemble-me-poster.jpg" alt="Affiche You Resemble Me" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=mUG3RV-eQ2w" target="_blank" rel="noopener" class="poster-link" data-film="merveilles-a-montfermeil"><img src="assets/wall/merveilles.jpg" alt="Affiche Merveilles à Montfermeil" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=mHFTXh-Lor0" target="_blank" rel="noopener" class="poster-link" data-film="en-mille-morceaux"><img src="assets/wall/en-mille-morceaux-poster.jpg" alt="Affiche En mille morceaux" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=msIwHYFMOes" target="_blank" rel="noopener" class="poster-link" data-film="bizarre"><img src="assets/wall/bizarre-poster.jpg" alt="Affiche Bizarre" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=uUKdBCuouqg" target="_blank" rel="noopener" class="poster-link" data-film="blockbuster"><img src="assets/wall/blockbuster-poster.jpg" alt="Affiche Blockbuster" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=ZFsSZcy_NBA" target="_blank" rel="noopener" class="poster-link" data-film="dernier-soleil"><img src="assets/wall/dernier-soleil.jpg" alt="Affiche Dernier Soleil" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=i4zapAP6cAY" target="_blank" rel="noopener" class="poster-link" data-film="gold-songs"><img src="assets/wall/gold-songs-poster.jpg" alt="Affiche Gold Songs" loading="lazy"></a>
+        <div class="poster-wall__divider"></div>
+        <img class="poster--short" src="assets/wall/la-ligne-de-vie-poster-v4.jpg" alt="Affiche La ligne de vie" loading="lazy" data-film="la-ligne-de-vie">
+        <img class="poster--short" src="assets/wall/mardochi-poster.jpg" alt="Affiche Mardochi" loading="lazy" data-film="mardochi">
+        <a href="https://www.youtube.com/watch?v=AWiRa7KZY4U" target="_blank" rel="noopener" class="poster-link" data-film="na-marei"><img class="poster--short" src="assets/wall/na-marei-poster.jpg" alt="Affiche Na Marei, l'invisible" loading="lazy"></a>
+        <img class="poster--short" src="assets/wall/la-grande-ourse-poster.jpg" alt="Affiche La Grande Ourse" loading="lazy" data-film="la-grande-ourse">
+        <img class="poster--short" src="assets/wall/the-loyal-man-poster.jpg" alt="Affiche The Loyal Man" loading="lazy" data-film="the-loyal-man">
+        <img class="poster--short" src="assets/wall/coqueluche-poster.jpg" alt="Affiche Coqueluche" loading="lazy" data-film="coqueluche">
+        <img class="poster--short" src="assets/wall/homme-sage-poster.jpg" alt="Affiche Homme sage" loading="lazy" data-film="homme-sage">
+        <img class="poster--short" src="assets/wall/mamina-poster.jpg" alt="Affiche Mamina" loading="lazy" data-film="mamina">
+        <img class="poster--short" src="assets/wall/apnees-poster.jpg" alt="Affiche Apnées" loading="lazy" data-film="apnees">
+        <img class="poster--short" src="assets/wall/simone-est-partie-poster.jpg" alt="Affiche Simone est partie" loading="lazy" data-film="simone-est-partie">
+        <img class="poster--short" src="assets/wall/lovena-poster-v3.jpg" alt="Affiche Lovena" loading="lazy" data-film="lovena">
+        <img class="poster--short" src="assets/wall/les-eveillees-poster.jpg" alt="Affiche Les Éveillées" loading="lazy" data-film="les-eveillees">
+        <img class="poster--short" src="assets/wall/particules-fines-poster.jpg" alt="Affiche Particules Fines" loading="lazy" data-film="particules-fines">
+        <img class="poster--short" src="assets/wall/jeune-fille-de-pierre-poster.jpg" alt="Affiche Les extraordinaires mésaventures de la jeune fille de pierre" loading="lazy" data-film="jeune-fille-de-pierre">
+        <img class="poster--short" src="assets/wall/tigre-poster.jpg" alt="Affiche Tigre" loading="lazy" data-film="tigre">
       </div>
     </div>
 
     <div class="hero__panel" data-panel="docs" hidden>
       <div class="poster-wall" id="wall-docs-all">
-        <a href="https://www.youtube.com/watch?v=adUBqIjHyfs" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/dans-la-legende-poster.jpg" alt="Affiche Dans la légende" loading="lazy"></a>
-        <img src="assets/wall/a-la-chaleur-des-annees-froides-poster.jpg" alt="Affiche À la chaleur des années froides" loading="lazy">
-        <a href="https://www.youtube.com/watch?v=iu-W09mkpkg" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/rhino-dollars-poster.jpg" alt="Affiche Rhino Dollars" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=mChWLIxhAko" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/mensonges-histoire-poster.jpg" alt="Affiche Les Mensonges de l'Histoire" loading="lazy"></a>
-        <img src="assets/wall/demain-le-feu-poster.jpg" alt="Affiche Demain le feu" loading="lazy">
-        <a href="https://www.youtube.com/watch?v=AgmxKPY5Vak" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/gadjo-poster.jpg" alt="Affiche Gadjo, un prince chez les Manouches" loading="lazy"></a>
-        <img src="assets/wall/infrarouge-kourtrajme-poster.jpg" alt="Affiche Infrarouge - 365 jours à l'école Kourtrajme" loading="lazy">
-        <a href="https://www.facebook.com/share/v/1BrGLvN4th/" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/retour-nature-sauvage-poster.jpg" alt="Affiche Le retour de la nature sauvage" loading="lazy"></a>
-        <a href="https://www.arte.tv/fr/videos/RC-017955/les-grands-mythes-l-iliade-et-l-odyssee/" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/grands-mythes-poster.jpg" alt="Affiche Les Grands Mythes" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=rFjUl36hky8" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/napoleon-metternich-poster.jpg" alt="Affiche Napoléon Metternich, le commencement de la fin" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=t4LKSFBX9h0" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/yafrica-poster.jpg" alt="Affiche Y'Africa" loading="lazy"></a>
-        <a href="https://youtu.be/odEy0VfVAmo" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/irmas-poster.jpg" alt="Affiche Irmas" loading="lazy"></a>
-        <img src="assets/wall/odyssee-borgey-poster.jpg" alt="Affiche L'Odyssée des Borgey" loading="lazy">
-        <a href="https://www.youtube.com/watch?v=MWEJwTdkI-k" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/maintenant-ou-jamais-poster-v3.jpg" alt="Affiche Maintenant ou Jamais" loading="lazy"></a>
-      </div>
-
-      <div class="poster-wall" id="wall-docs-series" hidden>
-        <a href="https://www.youtube.com/watch?v=adUBqIjHyfs" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/dans-la-legende-poster.jpg" alt="Affiche Dans la légende" loading="lazy"></a>
-        <a href="https://www.facebook.com/share/v/1BrGLvN4th/" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/retour-nature-sauvage-poster.jpg" alt="Affiche Le retour de la nature sauvage" loading="lazy"></a>
-        <a href="https://www.arte.tv/fr/videos/RC-017955/les-grands-mythes-l-iliade-et-l-odyssee/" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/grands-mythes-poster.jpg" alt="Affiche Les Grands Mythes" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=mChWLIxhAko" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/mensonges-histoire-poster.jpg" alt="Affiche Les Mensonges de l'Histoire" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=t4LKSFBX9h0" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/yafrica-poster.jpg" alt="Affiche Y'Africa" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=MWEJwTdkI-k" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/maintenant-ou-jamais-poster-v3.jpg" alt="Affiche Maintenant ou Jamais" loading="lazy"></a>
-      </div>
-
-      <div class="poster-wall" id="wall-docs-unitaire" hidden>
-        <img src="assets/wall/a-la-chaleur-des-annees-froides-poster.jpg" alt="Affiche À la chaleur des années froides" loading="lazy">
-        <a href="https://www.youtube.com/watch?v=iu-W09mkpkg" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/rhino-dollars-poster.jpg" alt="Affiche Rhino Dollars" loading="lazy"></a>
-        <img src="assets/wall/demain-le-feu-poster.jpg" alt="Affiche Demain le feu" loading="lazy">
-        <a href="https://www.youtube.com/watch?v=AgmxKPY5Vak" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/gadjo-poster.jpg" alt="Affiche Gadjo, un prince chez les Manouches" loading="lazy"></a>
-        <img src="assets/wall/infrarouge-kourtrajme-poster.jpg" alt="Affiche Infrarouge - 365 jours à l'école Kourtrajme" loading="lazy">
-        <a href="https://www.youtube.com/watch?v=rFjUl36hky8" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/napoleon-metternich-poster.jpg" alt="Affiche Napoléon Metternich, le commencement de la fin" loading="lazy"></a>
-        <a href="https://youtu.be/odEy0VfVAmo" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/irmas-poster.jpg" alt="Affiche Irmas" loading="lazy"></a>
-        <img src="assets/wall/odyssee-borgey-poster.jpg" alt="Affiche L'Odyssée des Borgey" loading="lazy">
+        <a href="https://www.youtube.com/watch?v=adUBqIjHyfs" target="_blank" rel="noopener" class="poster-link" data-film="dans-la-legende"><img src="assets/wall/dans-la-legende-poster.jpg" alt="Affiche Dans la légende" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=MWEJwTdkI-k" target="_blank" rel="noopener" class="poster-link" data-film="maintenant-ou-jamais"><img src="assets/wall/maintenant-ou-jamais-poster-v4.jpg" alt="Affiche Maintenant ou Jamais" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=rFjUl36hky8" target="_blank" rel="noopener" class="poster-link" data-film="napoleon-metternich"><img src="assets/wall/napoleon-metternich-poster.jpg" alt="Affiche Napoléon Metternich, le commencement de la fin" loading="lazy"></a>
+        <img src="assets/wall/infrarouge-kourtrajme-poster.jpg" alt="Affiche Infrarouge - 365 jours à l'école Kourtrajme" loading="lazy" data-film="infrarouge-kourtrajme">
+        <a href="https://www.arte.tv/fr/videos/RC-017955/les-grands-mythes-l-iliade-et-l-odyssee/" target="_blank" rel="noopener" class="poster-link" data-film="grands-mythes"><img src="assets/wall/grands-mythes-poster.jpg" alt="Affiche Les Grands Mythes" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=AgmxKPY5Vak" target="_blank" rel="noopener" class="poster-link" data-film="gadjo"><img src="assets/wall/gadjo-poster.jpg" alt="Affiche Gadjo, un prince chez les Manouches" loading="lazy"></a>
+        <a href="https://www.facebook.com/share/v/1BrGLvN4th/" target="_blank" rel="noopener" class="poster-link" data-film="retour-nature-sauvage"><img src="assets/wall/retour-nature-sauvage-poster.jpg" alt="Affiche Le retour de la nature sauvage" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=iu-W09mkpkg" target="_blank" rel="noopener" class="poster-link" data-film="rhino-dollars"><img src="assets/wall/rhino-dollars-poster.jpg" alt="Affiche Rhino Dollars" loading="lazy"></a>
+        <img src="assets/wall/demain-le-feu-poster.jpg" alt="Affiche Demain le feu" loading="lazy" data-film="demain-le-feu">
+        <a href="https://www.youtube.com/watch?v=mChWLIxhAko" target="_blank" rel="noopener" class="poster-link" data-film="mensonges-histoire"><img src="assets/wall/mensonges-histoire-poster.jpg" alt="Affiche Les Mensonges de l'Histoire" loading="lazy"></a>
+        <img src="assets/wall/a-la-chaleur-des-annees-froides-poster.jpg" alt="Affiche À la chaleur des années froides" loading="lazy" data-film="chaleur-annees-froides">
+        <a href="https://www.youtube.com/watch?v=t4LKSFBX9h0" target="_blank" rel="noopener" class="poster-link" data-film="yafrica"><img src="assets/wall/yafrica-poster.jpg" alt="Affiche Y'Africa" loading="lazy"></a>
+        <a href="https://youtu.be/odEy0VfVAmo" target="_blank" rel="noopener" class="poster-link" data-film="irmas"><img src="assets/wall/irmas-poster.jpg" alt="Affiche Irmas" loading="lazy"></a>
+        <img src="assets/wall/odyssee-borgey-poster.jpg" alt="Affiche L'Odyssée des Borgey" loading="lazy" data-film="odyssee-borgey">
       </div>
     </div>
 
     <div class="hero__panel" data-panel="series" hidden>
       <div class="poster-wall" id="wall-series">
         <a href="https://www.youtube.com/watch?v=JJ1NA-L_uRM" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/stalk-poster.jpg" alt="Affiche Stalk, saison 3" loading="lazy"></a>
-        <a href="https://www.youtube.com/watch?v=TV3Xm0Kh2vQ" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/loulou-poster.jpg" alt="Affiche Loulou" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=TV3Xm0Kh2vQ" target="_blank" rel="noopener" class="poster-link"><img class="poster--top" src="assets/wall/loulou-poster-v3.jpg" alt="Affiche Loulou" loading="lazy"></a>
         <a href="https://www.youtube.com/watch?v=uvGFTO-DQFg" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/sintonia-poster.jpg" alt="Affiche Sintonia" loading="lazy"></a>
       </div>
     </div>
 
     <div class="hero__panel" data-panel="clips" hidden>
       <div class="poster-wall" id="wall-clips">
-        <a href="https://www.youtube.com/watch?v=YnYBcbrC35s" target="_blank" rel="noopener" class="poster-link"><img src="assets/wall/mf-clip-poster-v6.jpg" alt="Affiche du clip C'est à qui le tour, Mylène Farmer" loading="lazy"></a>
+        <a href="https://www.youtube.com/watch?v=YnYBcbrC35s" target="_blank" rel="noopener" class="poster-link" data-film="cest-a-qui-le-tour"><img src="assets/wall/mf-clip-poster-v6.jpg" alt="Affiche du clip C'est à qui le tour, Mylène Farmer" loading="lazy"></a>
       </div>
       <div class="clip-caption">
         <h3>C'est à qui le tour</h3>
         <p class="clip-caption__meta"><span data-en="Music Video">Clip</span> <span class="film__dot">·</span> 2026 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span> Julia Ducournau</p>
-        <p class="clip-caption__role" data-en="Production Sound Mixer">Chef opérateur du son</p>
         <p class="clip-caption__note" data-en="Music video for Mylène Farmer — Released June 2026">Clip de Mylène Farmer — Sorti en juin 2026</p>
       </div>
     </div>
   </section>
 
-  <section class="films" id="films">
-    <div class="section__head">
-      <h2 data-en="Recent Work">Dernièrement</h2>
-    </div>
-
-    <div class="films__grid">
-
-      <article class="film">
-        <div class="film__poster film__poster--full">
-          <img src="assets/marie-madeleine-v5.jpg" alt="Affiche du film Marie Madeleine" loading="lazy">
-        </div>
-        <div class="film__info">
-          <h3>Marie Madeleine</h3>
-          <p class="film__meta"><span data-en="Feature Film">Long métrage</span> <span class="film__dot">·</span> 2026 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span> Gessica Généus</p>
-          <p class="film__role" data-en="Production Sound Mixer · Supervising Sound Editor">Chef opérateur du son · Chef monteur son</p>
-          <p class="film__badge" data-en="Official Selection — Cannes Première 2026">Sélection Officielle — Cannes Première 2026</p>
-        </div>
-      </article>
-
-      <article class="film film--large">
-        <div class="film__poster">
-          <img src="assets/cest-a-qui-le-tour-featured.jpg" alt="Affiche du clip C'est à qui le tour" loading="lazy">
-        </div>
-        <div class="film__info">
-          <h3>C'est à qui le tour</h3>
-          <p class="film__meta"><span data-en="Music Video">Clip</span> <span class="film__dot">·</span> 2026 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span> Julia Ducournau</p>
-          <p class="film__role" data-en="Production Sound Mixer">Chef opérateur du son</p>
-          <p class="film__badge" data-en="Music video for Mylène Farmer — Released June 2026">Clip de Mylène Farmer — Sorti en juin 2026</p>
-        </div>
-      </article>
-
-      <article class="film">
-        <div class="film__poster">
-          <img src="assets/la-ligne-de-vie-featured-bataille.jpg" alt="Affiche du film La ligne de Vie" loading="lazy">
-        </div>
-        <div class="film__info">
-          <h3>La ligne de Vie</h3>
-          <p class="film__meta"><span data-en="Short Film">Court métrage</span> <span class="film__dot">·</span> 2025 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span> Hugo Becker</p>
-          <p class="film__role" data-en="Supervising Sound Editor">Chef monteur son</p>
-          <p class="film__badge" data-en="Official Selection — Venice Film Festival 2025">Sélection Officielle — Mostra de Venise 2025</p>
-        </div>
-      </article>
-
-      <article class="film film--large">
-        <div class="film__poster">
-          <img src="assets/ka-featured.jpg" alt="Affiche du film KA" loading="lazy">
-        </div>
-        <div class="film__info">
-          <h3>KA</h3>
-          <p class="film__meta"><span data-en="Feature Film">Long métrage</span> <span class="film__dot">·</span> <span data-en="In post-production">En post-production</span> <span class="film__dot">·</span> 2027 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span> Pedro Peralta</p>
-          <p class="film__role" data-en="Supervising Sound Editor">Chef monteur son</p>
-          <p class="film__badge" data-en="Theatrical release in 2027">Sortie salle en 2027</p>
-        </div>
-      </article>
-
-      <article class="film">
-        <div class="film__poster">
-          <img src="assets/maintenant-ou-jamais-featured-v2.jpg" alt="Affiche de la série Maintenant ou Jamais" loading="lazy">
-        </div>
-        <div class="film__info">
-          <h3>Maintenant ou Jamais</h3>
-          <p class="film__meta">20×30 min · HBO Max <span class="film__dot">·</span> 2025 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span> Ousmane Ly</p>
-          <p class="film__role" data-en="Production Sound Mixer">Chef opérateur du son</p>
-          <p class="film__badge" data-en="Release July 2025">Sortie juillet 2025</p>
-        </div>
-      </article>
-
-      <article class="film film--large">
-        <div class="film__poster">
-          <img src="assets/stalk-featured-v4.jpg" alt="Affiche de la série Stalk, saison 3" loading="lazy">
-        </div>
-        <div class="film__info">
-          <h3>Stalk</h3>
-          <p class="film__meta film__meta--stack"><span class="film__meta-prefix"><span data-en="Season 3 · 10×30 min · France·tv">Saison 3 · 10×30 min · France·tv</span> <span class="film__dot">·</span> 2025 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span></span><span class="film__meta-name">Jean-Charles Paugam<br>et Simon Bouisson</span></p>
-          <p class="film__role" data-en="ADR Sound Engineer">Ingénieur du son post-synchros</p>
-          <p class="film__badge" data-en="Release September 2025">Sortie septembre 2025</p>
-        </div>
-      </article>
-
-      <article class="film">
-        <div class="film__poster">
-          <img src="assets/little-jaffna-web.jpg" alt="Affiche du film Little Jaffna" loading="lazy">
-        </div>
-        <div class="film__info">
-          <h3>Little Jaffna</h3>
-          <p class="film__meta"><span data-en="Feature Film">Long métrage</span> <span class="film__dot">·</span> 2024 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span> Lawrence Valin</p>
-          <p class="film__role" data-en="Production Sound Mixer">Chef opérateur du son</p>
-          <p class="film__badge" data-en="Venice Film Festival — Critics'&nbsp;Week&nbsp;2024">Mostra de Venise — Semaine de la&nbsp;Critique&nbsp;2024</p>
-        </div>
-      </article>
-
-      <article class="film film--large">
-        <div class="film__poster">
-          <img src="assets/les-meutes.jpg" alt="Affiche du film Les Meutes" loading="lazy">
-        </div>
-        <div class="film__info">
-          <h3>Les Meutes</h3>
-          <p class="film__meta"><span data-en="Feature Film">Long métrage</span> <span class="film__dot">·</span> 2023 <span class="film__dot">·</span> <span data-en="Directed by">Réalisé par</span> Kamal Lazraq</p>
-          <p class="film__role" data-en="Production Sound Mixer · Supervising Sound Editor">Chef opérateur du son · Chef monteur son</p>
-          <p class="film__badge" data-en="Jury Prize — Un Certain Regard, Cannes 2023">Prix du Jury — Un Certain Regard, Cannes 2023</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section class="filmo" id="filmo">
-    <div class="section__head">
-      <h2 data-en="Filmography">Filmographie</h2>
-    </div>
+  <section class="filmo" id="filmo" hidden>
 
     <div class="filmo__group">
       <h3 class="filmo__title" data-en="Feature Films">Longs-métrages</h3>
@@ -363,61 +220,33 @@
     </div>
   </section>
 
-  <section class="apropos" id="apropos">
-    <div class="section__head">
-      <h2 data-en="About">À propos</h2>
-    </div>
+  <section class="apropos" id="apropos" hidden>
 
     <div class="apropos__body">
       <div class="apropos__text">
-        <p data-en="Thomas Van Pottelberge is a sound recordist and sound editor for narrative film and documentary.">
-          Thomas Van Pottelberge est chef opérateur du son et monteur son
+        <p data-en="Thomas Van Pottelberge is a sound recordist and sound editor<br>for narrative film and documentary.">
+          Thomas Van Pottelberge est chef opérateur du son et monteur son<br>
           pour le cinéma de fiction et documentaire.
         </p>
-        <p data-en="His work includes <em>Les Meutes</em> by Kamal Lazraq, Jury Prize in Un Certain Regard at the 2023 Cannes Film Festival, <em>Marie Madeleine</em> and <em>Freda</em> by Gessica Généus, both presented in Cannes in official selection in 2026 and 2021, <em>Little Jaffna</em> by Lawrence Valin, as well as alongside directors selected in Venice, Berlin and Rotterdam.">
-          Il a notamment travaillé sur <em>Les Meutes</em> de Kamal Lazraq, prix du Jury Un Certain
-          Regard au Festival de Cannes 2023, <em>Marie Madeleine</em> et <em>Freda</em> de Gessica
-          Généus, tous les deux présentés à Cannes en sélection officielle en 2026 et 2021,
-          <em>Little Jaffna</em> de Lawrence Valin, ainsi qu'aux côtés de réalisateurs sélectionnés à
-          Venise, Berlin et Rotterdam.
+        <p data-en="His work includes <em>Les Meutes</em> by Kamal Lazraq,<br>Jury Prize in Un Certain Regard at the 2023 Cannes Film Festival,<br><em>Marie Madeleine</em> and <em>Freda</em> by Gessica Généus,<br>both presented in Cannes in official selection in 2026 and 2021,<br><em>Little Jaffna</em> by Lawrence Valin,<br>as well as alongside directors selected in Venice, Berlin and Rotterdam.">
+          Il a notamment travaillé sur <em>Les Meutes</em> de Kamal Lazraq,<br>
+          prix du Jury Un Certain Regard au Festival de Cannes 2023,<br>
+          <em>Marie Madeleine</em> et <em>Freda</em> de Gessica Généus,<br>
+          tous les deux présentés à Cannes en sélection officielle en 2026 et 2021,<br>
+          <em>Little Jaffna</em> de Lawrence Valin,<br>
+          ainsi qu'aux côtés de réalisateurs sélectionnés à Venise, Berlin et Rotterdam.
         </p>
-      </div>
-      <div class="apropos__photo">
-        <img src="assets/contact-photo.jpg" alt="Thomas Van Pottelberge sur un plateau, avec son matériel de prise de son" loading="lazy">
-      </div>
-    </div>
-
-    <div class="contact__body" id="contact">
-      <div class="contact__primary">
-        <a class="btn btn--mail" href="mailto:tomvanpot@gmail.com">tomvanpot@gmail.com</a>
-        <a class="contact__phone" href="tel:+33672150742">+33.6.72.15.07.42</a>
-        <span class="contact__location">
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-          Paris
-        </span>
-      </div>
-      <div class="contact__links">
-        <a class="btn btn--ghost btn--imdb" href="https://www.imdb.com/fr/name/nm7089662/" target="_blank" rel="noopener">
-          <img src="assets/imdb-logo-v2.png" alt="Profil IMDB">
-        </a>
-        <a class="btn btn--ghost btn--unifrance" href="https://www.unifrance.org/annuaires/personne/404816/thomas-van-pottelberge" target="_blank" rel="noopener">
-          <img src="assets/unifrance-logo.png" alt="Profil Unifrance">
-        </a>
-        <a class="btn btn--ghost btn--instagram" href="https://www.instagram.com/tomvanpot" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </div>
-      <div class="contact__affiliations">
-        <p><span data-en="Member of">Membre du</span> <a href="https://www.dadsonstudio.com" target="_blank" rel="noopener">Studio Dadson</a></p>
-        <p><span data-en="Partner of">Partenaire de</span> <a href="https://www.pleineimage-post.com" target="_blank" rel="noopener">Pleine Image Post</a> <span class="film__dot">·</span> <a href="https://dinosaures-sarl.fr" target="_blank" rel="noopener">Dinosaures SARL</a></p>
       </div>
     </div>
   </section>
 
-  <section class="apropos apropos--gallery">
+  <section class="apropos apropos--gallery" hidden>
     <div class="apropos__gallery-section">
-      <h3 class="apropos__gallery-title">Galleries photos</h3>
       <div class="apropos__gallery" id="apropos-gallery">
+        <figure class="apropos__gallery-item">
+          <img src="assets/contact-photo.jpg" data-full="assets/contact-photo.jpg" alt="Thomas Van Pottelberge sur le tournage des Meutes, au Maroc à Casablanca, 2022" loading="lazy">
+          <figcaption data-en="On the shoot of Les Meutes, in Morocco, Casablanca 2022">Sur le tournage des Meutes, au Maroc, Casablanca 2022</figcaption>
+        </figure>
         <figure class="apropos__gallery-item">
           <img src="assets/gallery/tournage-01.jpg" data-full="assets/gallery/tournage-01-full.jpg" alt="Tournage, équipe technique sous un parapluie de protection" loading="lazy">
           <figcaption data-en="On the shoot of Marie Madeleine in Jacmel, Haiti, November 2025">Sur le tournage de Marie Madeleine à Jacmel en Haïti, Novembre 2025</figcaption>
@@ -466,6 +295,34 @@
     </div>
   </section>
 
+  <section class="contact" id="contact" hidden>
+    <div class="contact__body">
+      <div class="contact__primary">
+        <a class="btn btn--mail" href="mailto:tomvanpot@gmail.com">tomvanpot@gmail.com</a>
+        <a class="contact__phone" href="tel:+33672150742">+33.6.72.15.07.42</a>
+        <span class="contact__location">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-7.58 7-12.5A7 7 0 0 0 5 9.5C5 14.42 12 22 12 22Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Paris
+        </span>
+      </div>
+      <div class="contact__links">
+        <a class="btn btn--ghost btn--imdb" href="https://www.imdb.com/fr/name/nm7089662/" target="_blank" rel="noopener">
+          <img src="assets/imdb-logo-v2.png" alt="Profil IMDB">
+        </a>
+        <a class="btn btn--ghost btn--unifrance" href="https://www.unifrance.org/annuaires/personne/404816/thomas-van-pottelberge" target="_blank" rel="noopener">
+          <img src="assets/unifrance-logo.png" alt="Profil Unifrance">
+        </a>
+        <a class="btn btn--ghost btn--instagram" href="https://www.instagram.com/tomvanpot" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+      <div class="contact__affiliations">
+        <p><span data-en="Member of">Membre du</span> <a href="https://www.dadsonstudio.com" target="_blank" rel="noopener">Studio Dadson</a></p>
+        <p><span data-en="Partner of">Partenaire de</span> <a href="https://www.pleineimage-post.com" target="_blank" rel="noopener">Pleine Image Post</a> <span class="film__dot">·</span> <a href="https://dinosaures-sarl.fr" target="_blank" rel="noopener">Dinosaures SARL</a></p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -487,6 +344,33 @@
   <div class="video-lightbox__stage">
     <div class="video-lightbox__frame">
       <iframe id="videoLightboxIframe" src="" title="Bande-annonce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="project-lightbox" id="projectLightbox" hidden>
+  <button type="button" class="lightbox__close" id="projectLightboxClose" aria-label="Fermer">&times;</button>
+  <div class="project-lightbox__stage">
+    <div class="project-lightbox__media">
+      <div class="project-lightbox__frame">
+        <iframe id="projectLightboxIframe" src="" title="Bande-annonce" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="project-lightbox__info">
+      <h2 class="project-lightbox__title" id="projectTitle"></h2>
+      <div class="project-lightbox__meta" id="projectMeta"></div>
+      <div class="project-lightbox__section" id="projectAwards" hidden>
+        <h3 data-en="Selections &amp; awards">Sélections &amp; prix</h3>
+        <ul id="projectAwardsList"></ul>
+      </div>
+      <div class="project-lightbox__section" id="projectSynopsis" hidden>
+        <h3 data-en="Synopsis">Synopsis</h3>
+        <p id="projectSynopsisText"></p>
+      </div>
+      <div class="project-lightbox__section" id="projectSoundTeam" hidden>
+        <h3 data-en="Sound team">Équipe son</h3>
+        <ul id="projectSoundTeamList"></ul>
+      </div>
     </div>
   </div>
 </div>

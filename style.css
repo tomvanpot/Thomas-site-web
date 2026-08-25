@@ -90,10 +90,10 @@ body {
 
 .nav__affiliations {
   margin-top: 4px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.03em;
   line-height: 1.5;
-  opacity: 0.6;
+  opacity: 0.85;
 }
 
 .nav__links {

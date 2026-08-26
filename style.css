@@ -1391,3 +1391,56 @@ section {
   .nav { padding: 22px 7vw; }
 
 }
+
+/* Below ~1180px the desktop header (nav links flush left/right with the
+   identity block absolutely centered between them) no longer has room:
+   the centered block starts overlapping the links and swallowing clicks
+   (this affects tablets and small laptop windows too, not just phones).
+   Stack everything in one centered column instead — identity first, then
+   the nav links, then the language switcher — all flowing normally so
+   --nav-height (measured from the real rendered height in script.js)
+   keeps the hero clear of it automatically. */
+@media (max-width: 1180px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 6vw 18px;
+  }
+
+  .nav__id {
+    position: static;
+    transform: none;
+    order: -1;
+  }
+
+  .nav__name {
+    font-size: 19px;
+  }
+
+  .nav__role {
+    font-size: 13px;
+  }
+
+  .nav__affiliations {
+    padding: 0 4vw;
+  }
+
+  .nav__links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .nav__lang {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav__links {
+    gap: 12px 14px;
+    font-size: 11px;
+  }
+}

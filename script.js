@@ -13,6 +13,37 @@ document.getElementById('year').textContent = new Date().getFullYear();
   window.addEventListener('resize', update);
 })();
 
+// Hides the header as soon as the visitor scrolls down — a soft fade +
+// slight lift rather than a hard slide-off. It only comes back once they've
+// scrolled all the way back to the very top, not on every upward scroll.
+(function autoHideNav() {
+  const navEl = document.getElementById('nav');
+  if (!navEl) return;
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  function update() {
+    const currentY = window.scrollY;
+    const delta = currentY - lastY;
+    if (currentY <= 40) {
+      navEl.classList.remove('nav--hidden');
+    } else if (delta > 4) {
+      // Ignore tiny frame-to-frame jitter (trackpad momentum,
+      // rubber-banding) so it only reacts to an intentional scroll.
+      navEl.classList.add('nav--hidden');
+    }
+    lastY = currentY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
 const FADE_MS = 260;
 
 // Crossfade helper: fades `fromEl` out, swaps `hidden` on both, fades `toEl` in.

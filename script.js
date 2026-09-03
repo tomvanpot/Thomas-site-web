@@ -130,7 +130,7 @@ function playLandingEffect(wallEl) {
 const categoryButtons = document.querySelectorAll('.hero__category');
 const panels = document.querySelectorAll('.hero__panel');
 
-// Switches the visible top-level panel (Cinéma / Documentaires / Séries / Clips).
+// Switches the visible top-level panel (Cinéma / Documentaires / Séries).
 // Each panel is now a single merged mosaic (no more Longs/Courts or
 // Séries/Unitaires sub-tabs), so this just swaps panels and replays that
 // panel's gather effect.
@@ -149,9 +149,6 @@ function setCategory(target, { animate = true } = {}) {
   }
   if (target === 'series') {
     window.setTimeout(() => playGroupEffect(document.getElementById('wall-series')), FADE_MS);
-  }
-  if (target === 'clips') {
-    window.setTimeout(() => playGroupEffect(document.getElementById('wall-clips')), FADE_MS);
   }
   if (target === 'cinema') {
     window.setTimeout(() => playGroupEffect(document.getElementById('wall-longs')), FADE_MS);
@@ -222,7 +219,7 @@ if (navCvLink) {
 
 // The "Films" nav link should always land the visitor back on the Fiction
 // mosaic specifically — not just scroll to the top while leaving whatever
-// category was last active (Documentaires, Séries, Clips...) on screen.
+// category was last active (Documentaires, Séries...) on screen.
 function resetToHome() {
   showView('home');
   setCategory('cinema', { animate: true });
@@ -871,20 +868,6 @@ const filmsData = {
       en: "A sculpture runs away from the Louvre to confront real life on the streets of Paris.",
     },
   },
-  'cest-a-qui-le-tour': {
-    title: "C'est à qui le tour",
-    director: 'Julia Ducournau',
-    youtubeId: 'YnYBcbrC35s',
-    soundTeam: [
-      { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
-      { role: 'Monteur son', name: 'Séverin Favriau' },
-      { role: 'Mixeur', name: 'Séverin Favriau' },
-    ],
-    synopsis: {
-      fr: "Clip du single de Mylène Farmer, sorti en juin 2026. Le clip suit Mylène Farmer traversant un tunnel étrange où elle croise son double venu d'un autre monde et d'un autre clip, en référence au « Libertine » provocateur de Laurent Boutonnat.",
-      en: "Music video for Mylène Farmer's single, released in June 2026. It follows Mylène Farmer through a strange tunnel where she meets her double from another world and another video, in reference to Laurent Boutonnat's provocative \"Libertine.\"",
-    },
-  },
   tigre: {
     title: 'Tigre',
     director: 'Delphine Deloget',
@@ -902,7 +885,13 @@ const filmsData = {
   'dans-la-legende': {
     title: 'Dans la légende',
     director: 'Alexandre Pierrin',
+    production: 'Nolita · Paramount+',
+    format: '6×30 min',
     youtubeId: 'adUBqIjHyfs',
+    soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Martin Lanot, Thomas Van Pottelberge', self: true },
+      { role: 'Montage son et mixage', name: 'Thomas Van Pottelberge, Benjamin Lecuyer', self: true },
+    ],
     synopsis: {
       fr: "Docusérie qui plonge dans le monde de l'esport professionnel, au plus près de joueurs et d'équipes lancés dans la course aux plus grands titres.",
       en: "A docuseries diving into the world of professional esports, following players and teams chasing the biggest titles.",
@@ -911,7 +900,12 @@ const filmsData = {
   'maintenant-ou-jamais': {
     title: 'Maintenant ou Jamais',
     director: 'Ousmane Ly',
+    production: 'Fédérations · HBO',
+    format: '5×35 min',
     youtubeId: 'MWEJwTdkI-k',
+    soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge, Nassim El Mounnabih, Jean Christophe Lion', self: true },
+    ],
     synopsis: {
       fr: "Docusérie qui suit de jeunes footballeurs du club FC Montfermeil dans leur ascension vers le monde professionnel.",
       en: "A docuseries following young footballers from FC Montfermeil on their path toward professional football.",
@@ -920,7 +914,13 @@ const filmsData = {
   'napoleon-metternich': {
     title: "Napoléon Metternich, le commencement de la fin",
     director: 'Mathieu Schwartz, Christian Twente',
-    youtubeId: 'rFjUl36hky8',
+    production: 'ARTE · ZDF',
+    format: '90 min',
+    embedUrl: 'https://www.dailymotion.com/embed/video/x86rehv',
+    soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Mixage', name: 'Mathieu Langlet' },
+    ],
     synopsis: {
       fr: "Docu-fiction qui retrace l'affrontement entre Napoléon et le chancelier autrichien Metternich, dont l'issue scella le sort de l'Empire.",
       en: "A docu-drama retracing the confrontation between Napoleon and Austrian chancellor Metternich, whose outcome sealed the fate of the Empire.",
@@ -929,6 +929,11 @@ const filmsData = {
   'infrarouge-kourtrajme': {
     title: "Infrarouge - 365 jours à l'école Kourtrajme",
     director: 'Karima Hamzaoui, Ladj Ly',
+    production: 'Lily Films · France Télévisions',
+    format: '90 min',
+    soundTeam: [
+      { role: 'Montage son et mixage', name: 'Thomas Van Pottelberge', self: true },
+    ],
     synopsis: {
       fr: "Une année dans l'école de cinéma gratuite fondée par Ladj Ly à Montfermeil, aux côtés d'élèves venus de tous horizons.",
       en: "A year inside the free film school founded by Ladj Ly in Montfermeil, alongside students from all walks of life.",
@@ -937,6 +942,12 @@ const filmsData = {
   'grands-mythes': {
     title: 'Les Grands Mythes — L\'Iliade et l\'Odyssée',
     director: 'Gaetan Chabanol, Nathalie Amsellem, Sylvain Bergère',
+    production: 'ARTE · Les Monstres',
+    format: 'Saison 1, 20×30 min',
+    soundTeam: [
+      { role: 'Sound design', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Mixage', name: 'Vincent Huré, Christophe Millet' },
+    ],
     synopsis: {
       fr: "Série documentaire qui explore les grands mythes fondateurs, ici l'Iliade et l'Odyssée d'Homère, éclairée par des historiens et spécialistes.",
       en: "A documentary series exploring foundational myths — here, Homer's Iliad and Odyssey — with insight from historians and specialists.",
@@ -945,8 +956,14 @@ const filmsData = {
   gadjo: {
     title: 'Gadjo, un prince chez les Manouches',
     director: 'Flora Desprats',
+    production: 'Silex Films · ARTE France',
+    format: '90 min',
     youtubeId: 'AgmxKPY5Vak',
     awards: ['Étoile de la Scam 2015'],
+    soundTeam: [
+      { role: 'Chef opérateur du son', name: 'David Amsalem, Thomas Van Pottelberge, Jean Christophe Lion', self: true },
+      { role: 'Montage son et mixage', name: 'Julie Tribout' },
+    ],
     synopsis: {
       fr: "Immersion dans une famille manouche du sud de la France, entre transmission, traditions et vie quotidienne.",
       en: "An immersion into a Manouche family in the south of France, exploring tradition, transmission and everyday life.",
@@ -954,6 +971,11 @@ const filmsData = {
   },
   'retour-nature-sauvage': {
     title: 'Le retour de la nature sauvage',
+    production: 'ARTE France · Bonne Pioche',
+    format: '3×52 min',
+    soundTeam: [
+      { role: 'Monteur son', name: 'Thomas Van Pottelberge', self: true },
+    ],
     synopsis: {
       fr: "Documentaire consacré au retour de la nature sauvage, entre reconquête des espaces et cohabitation avec la faune.",
       en: "A documentary about the return of wilderness, exploring reclaimed landscapes and coexistence with wildlife.",
@@ -962,7 +984,12 @@ const filmsData = {
   'rhino-dollars': {
     title: 'Rhino Dollars',
     director: 'Olivia Mokiejewski',
+    production: 'ARTE France',
+    format: '90 min',
     youtubeId: 'iu-W09mkpkg',
+    soundTeam: [
+      { role: 'Chef opérateur du son et montage son', name: 'Thomas Van Pottelberge', self: true },
+    ],
     synopsis: {
       fr: "Enquête sur le trafic international de cornes de rhinocéros, de l'Afrique du Sud jusqu'en Asie.",
       en: "An investigation into the international trafficking of rhino horns, from South Africa to Asia.",
@@ -971,6 +998,11 @@ const filmsData = {
   'demain-le-feu': {
     title: 'Demain le feu',
     director: 'Mehdi Meklat, Badroudine Saïd Abdallah',
+    production: 'Autoproduit par les réalisateurs',
+    soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Nassim El Mounabbih' },
+      { role: 'Montage son et mixage', name: 'Thomas Van Pottelberge', self: true },
+    ],
     synopsis: {
       fr: "Road-movie documentaire de Calais à Marseille, à la rencontre d'une jeunesse française en quête d'avenir.",
       en: "A documentary road movie from Calais to Marseille, meeting a French youth in search of a future.",
@@ -978,6 +1010,10 @@ const filmsData = {
   },
   'mensonges-histoire': {
     title: "Les Mensonges de l'Histoire — Le naufrage du Lusitania",
+    production: 'Compagnie des Phares et Balises · RMC Découverte',
+    soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
+    ],
     synopsis: {
       fr: "Cet épisode revient sur le naufrage du Lusitania en 1915 et les mensonges d'État qui ont entouré le drame.",
       en: "This episode revisits the 1915 sinking of the Lusitania and the state lies that surrounded the tragedy.",
@@ -986,6 +1022,11 @@ const filmsData = {
   'chaleur-annees-froides': {
     title: 'À la chaleur des années froides',
     director: 'Darius Kaufmann, Eytan Jan',
+    production: 'Amok Films · Temps Noir, avec la participation de Canal+',
+    soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Montage son et mixage', name: 'Mathieu Langlet' },
+    ],
     synopsis: {
       fr: "Documentaire sur le cinéma cubain, ses artistes et la manière dont ils créent malgré les pénuries et la censure.",
       en: "A documentary about Cuban cinema, its artists, and how they create despite shortages and censorship.",
@@ -995,6 +1036,10 @@ const filmsData = {
     title: "Y'Africa",
     director: 'Dan Assayag',
     youtubeId: 't4LKSFBX9h0',
+    soundTeam: [
+      { role: 'Chef opérateur du son (saison 1)', name: 'Thomas Van Pottelberge, Axel Guenoun', self: true },
+      { role: 'Mixage (saison 1)', name: 'Thomas Van Pottelberge', self: true },
+    ],
     synopsis: {
       fr: "Série documentaire qui explore les scènes musicales urbaines à travers le continent africain, ville par ville.",
       en: "A documentary series exploring urban music scenes across the African continent, city by city.",
@@ -1002,15 +1047,22 @@ const filmsData = {
   },
   irmas: {
     title: 'Irmas',
-    director: 'Caroline Duclert',
+    director: 'Caroline Duclert, Charles Guillemin',
     youtubeId: 'odEy0VfVAmo',
+    soundTeam: [
+      { role: 'Chef opérateur du son et montage son', name: 'Thomas Van Pottelberge', self: true },
+    ],
     synopsis: {
-      fr: "Portrait de jeunes religieuses au sein d'une congrégation, entre vie spirituelle et vie quotidienne.",
-      en: "A portrait of young nuns within a religious congregation, between spiritual life and everyday routine.",
+      fr: "Portrait de jeunes religieuses au sein d'une congrégation, entre vie spirituelle et vie quotidienne, à travers le Brésil, la Tanzanie et les Philippines.",
+      en: "A portrait of young nuns within a religious congregation, between spiritual life and everyday routine, across Brazil, Tanzania and the Philippines.",
     },
   },
   'odyssee-borgey': {
     title: "L'Odyssée des Borgey",
+    director: 'Charles Guillemin',
+    soundTeam: [
+      { role: 'Chef opérateur du son et montage son', name: 'Thomas Van Pottelberge', self: true },
+    ],
     synopsis: {
       fr: "Elsa et Frédéric Borgey quittent tout pour s'installer en Laponie et se consacrer à l'élevage et à la conduite de chiens de traîneau.",
       en: "Elsa and Frédéric Borgey leave everything behind to settle in Lapland and devote themselves to raising and driving sled dogs.",
@@ -1047,6 +1099,7 @@ function openProjectLightbox(slug) {
     const metaFields = [
       ['director', lang === 'en' ? 'Director' : 'Réalisateur·rice'],
       ['production', lang === 'en' ? 'Production' : 'Production'],
+      ['format', lang === 'en' ? 'Format' : 'Format'],
       ['cast', lang === 'en' ? 'Cast' : 'Avec'],
     ];
     metaFields.forEach(([key, label]) => {
@@ -1084,7 +1137,25 @@ function openProjectLightbox(slug) {
       projectSoundTeamList.innerHTML = '';
       film.soundTeam.forEach((member) => {
         const li = document.createElement('li');
-        li.textContent = `${member.role} : ${member.name}`;
+        li.appendChild(document.createTextNode(`${member.role} : `));
+        // Highlights Thomas's own name in gold within the name list (which
+        // may also include collaborators) instead of just brightening the
+        // whole line, so it reads the same way as the awards/production
+        // credits elsewhere on the fiche.
+        if (member.self && member.name.includes('Thomas Van Pottelberge')) {
+          const parts = member.name.split('Thomas Van Pottelberge');
+          parts.forEach((part, i) => {
+            if (i > 0) {
+              const self = document.createElement('span');
+              self.className = 'project-lightbox__self';
+              self.textContent = 'Thomas Van Pottelberge';
+              li.appendChild(self);
+            }
+            li.appendChild(document.createTextNode(part));
+          });
+        } else {
+          li.appendChild(document.createTextNode(member.name));
+        }
         if (member.self) li.classList.add('is-self');
         projectSoundTeamList.appendChild(li);
       });
@@ -1095,7 +1166,11 @@ function openProjectLightbox(slug) {
   }
 
   if (projectLightboxIframe) {
-    projectLightboxIframe.src = film.youtubeId
+    // Most trailers are hosted on YouTube (youtubeId), but a handful live
+    // elsewhere (e.g. Dailymotion) — those set embedUrl directly instead.
+    projectLightboxIframe.src = film.embedUrl
+      ? film.embedUrl
+      : film.youtubeId
       ? `https://www.youtube.com/embed/${film.youtubeId}?rel=0`
       : '';
   }

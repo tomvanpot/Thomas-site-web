@@ -459,7 +459,7 @@ const filmsData = {
     title: 'Marie Madeleine',
     director: 'Gessica Généus',
     production: 'Ayizan Production · SaNoSi Productions · Stenola Productions',
-    embedUrl: 'https://player.allocine.fr/20643088.html',
+    youtubeId: 'TNeDdjlk9EU',
     awards: ['Cannes 2026 — sélection Cannes Première'],
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },

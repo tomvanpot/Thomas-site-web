@@ -686,6 +686,15 @@ const filmsData = {
       en: "December 24, 1916. On the other side of a German checkpoint, a truck carrying mail is stopped and riddled with bullets. One man is killed. Another man and a woman, on a postal mission, claim their innocence and try to explain their presence in enemy territory, after the radio guiding them cut out in the middle of no man's land.",
     },
   },
+  'pauvres-diables': {
+    title: 'Pauvres Diables',
+    director: 'Olivier Sagne',
+    production: 'Artisans du Film · Cinq de Trèfle Productions',
+    cast: 'Luna Carpiaux, Cécile Chatignoux, Julie Brochen, Mathieu Genet',
+    soundTeam: [
+      { role: 'Mixeur', name: 'Thomas Van Pottelberge', self: true },
+    ],
+  },
   mardochi: {
     title: 'Mardochi',
     director: 'Lucas Gloppe',
@@ -1116,9 +1125,22 @@ function currentLang() {
   return document.documentElement.lang === 'en' ? 'en' : 'fr';
 }
 
+// Guards against a race between closing one fiche and opening the next:
+// closeProjectLightbox() clears the iframe after its fade-out delay, and if
+// a new fiche is opened while that delay is still pending, the stale
+// cleanup used to fire afterwards and blank the freshly-set trailer (an
+// empty iframe.src reloads the current page, which looked like "every
+// trailer is broken"). Cancelling any pending close on open fixes it.
+let projectLightboxCloseTimer = null;
+
 function openProjectLightbox(slug) {
   const film = filmsData[slug];
   if (!film || !projectLightbox) return;
+
+  if (projectLightboxCloseTimer) {
+    window.clearTimeout(projectLightboxCloseTimer);
+    projectLightboxCloseTimer = null;
+  }
 
   const lang = currentLang();
 
@@ -1228,9 +1250,11 @@ function openProjectLightbox(slug) {
 function closeProjectLightbox() {
   if (!projectLightbox) return;
   projectLightbox.classList.remove('is-visible');
-  window.setTimeout(() => {
+  if (projectLightboxCloseTimer) window.clearTimeout(projectLightboxCloseTimer);
+  projectLightboxCloseTimer = window.setTimeout(() => {
     projectLightbox.hidden = true;
     if (projectLightboxIframe) projectLightboxIframe.src = '';
+    projectLightboxCloseTimer = null;
   }, 300);
 }
 

@@ -821,22 +821,6 @@ const filmsData = {
       en: "Pierre does his best to manage a chaotic construction site he's responsible for. Bodies wear thin under impossible deadlines. Yet the site must keep going, without respite — and without accidents.",
     },
   },
-  'simone-est-partie': {
-    title: 'Simone est partie',
-    director: 'Mathilde Chavanne',
-    pressUrl: 'https://www.quinzaine-cineastes.fr/fr/film/simone-est-partie',
-    pressLabel: 'Voir la fiche du film sur quinzaine-cineastes.fr ↗',
-    awards: ['Quinzaine des Réalisateurs — Festival de Cannes 2021'],
-    soundTeam: [
-      { role: 'Chefs opérateurs du son', name: 'Thomas Van Pottelberge, Flavia Cordey', self: true },
-      { role: 'Monteur son', name: 'Florent Castellani' },
-      { role: 'Mixeur', name: 'Jules Jasko' },
-    ],
-    synopsis: {
-      fr: "De jeunes acteurs s'emparent des corps de ses grands-parents et rejouent leurs derniers moments ensemble. Accompagnés par la voix de son grand-père, ils racontent la mémoire qui s'échappe, les corps douloureux, la solitude — ils racontent la perte, et parlent de la vie.",
-      en: "Young actors take on the bodies of her grandparents and replay their last moments together. Guided by her grandfather's voice, they tell of memory slipping away, of pain in the body, of solitude — they speak of loss, and of life.",
-    },
-  },
   lovena: {
     title: 'Lovena',
     director: 'Olivier Sagne',

@@ -689,6 +689,8 @@ const filmsData = {
   mardochi: {
     title: 'Mardochi',
     director: 'Lucas Gloppe',
+    pressUrl: 'https://www.france.tv/france-3/libre-court/8734965-mardochi.html',
+    pressLabel: 'Voir le film sur france.tv ↗',
     awards: ['Prix des Passeurs de Courts — Festival européen du film court de Brest'],
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
@@ -703,6 +705,7 @@ const filmsData = {
   'na-marei': {
     title: 'Na Marei, l\'invisible',
     director: 'Léa-Jade Horlier',
+    youtubeId: 'AWiRa7KZY4U',
     awards: [
       'Présélectionné aux César 2025 du meilleur court métrage de fiction',
       'Éligible aux Oscars (Live Action Short Film)',
@@ -724,6 +727,8 @@ const filmsData = {
   'la-grande-ourse': {
     title: 'La Grande Ourse',
     director: 'Anthony Bajon',
+    pressUrl: 'https://www.canalplus.com/cinema/la-grande-ourse/h/29470653_50002',
+    pressLabel: 'Voir le film sur Canal+ ↗',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Rémi Chanaud' },
       { role: 'Monteur son', name: 'Thomas Van Pottelberge', self: true },
@@ -737,6 +742,7 @@ const filmsData = {
   'the-loyal-man': {
     title: 'The Loyal Man',
     director: 'Lawrence Valin',
+    youtubeId: 'PViFOeiwcew',
     awards: ['Prix Adami de la meilleure interprétation masculine — Festival de Clermont-Ferrand'],
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
@@ -751,6 +757,8 @@ const filmsData = {
   coqueluche: {
     title: 'Coqueluche',
     director: 'Aurélien Peyre',
+    pressUrl: 'https://boutique.arte.tv/detail/coqueluche',
+    pressLabel: 'Voir la bande-annonce sur arte.tv ↗',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Hugo Zeitoun' },
       { role: 'Monteur son', name: 'Thomas Van Pottelberge', self: true },
@@ -764,6 +772,7 @@ const filmsData = {
   'homme-sage': {
     title: 'Homme sage',
     director: 'Juliette Denis',
+    youtubeId: 'h2mZTliVqaw',
     awards: ['Prix Unifrance du court métrage 2021'],
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
@@ -778,6 +787,7 @@ const filmsData = {
   mamina: {
     title: 'Mamina',
     director: 'Massimo Riggi',
+    youtubeId: 'RYC6htmfX3k',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Gastinel' },
       { role: 'Monteur son', name: 'Thomas Van Pottelberge', self: true },
@@ -791,6 +801,7 @@ const filmsData = {
   apnees: {
     title: 'Apnées',
     director: 'Nicolas Panay',
+    embedUrl: 'https://player.vimeo.com/video/912894747',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
       { role: 'Monteur son', name: 'Timothée Bost' },
@@ -804,6 +815,8 @@ const filmsData = {
   'simone-est-partie': {
     title: 'Simone est partie',
     director: 'Mathilde Chavanne',
+    pressUrl: 'https://www.quinzaine-cineastes.fr/fr/film/simone-est-partie',
+    pressLabel: 'Voir la fiche du film sur quinzaine-cineastes.fr ↗',
     awards: ['Quinzaine des Réalisateurs — Festival de Cannes 2021'],
     soundTeam: [
       { role: 'Chefs opérateurs du son', name: 'Thomas Van Pottelberge, Flavia Cordey', self: true },
@@ -818,6 +831,7 @@ const filmsData = {
   lovena: {
     title: 'Lovena',
     director: 'Olivier Sagne',
+    youtubeId: 'sOaj4n1TYeE',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Tanguy Lailler' },
       { role: 'Monteur son', name: 'Benoît Déchaut' },
@@ -831,6 +845,7 @@ const filmsData = {
   'les-eveillees': {
     title: 'Les Éveillées',
     director: 'Nina Bouchaud Cheval',
+    youtubeId: 'LzOPrMA-ER4',
     awards: ['Talents en Court — FIFIB et Festival du film de Poitiers'],
     soundTeam: [
       { role: 'Chefs opérateurs du son', name: 'Benjamin Jaussaud, Alexandre Beullier' },
@@ -845,6 +860,8 @@ const filmsData = {
   'particules-fines': {
     title: 'Particules Fines',
     director: 'Anne-Claire Jaulin',
+    pressUrl: 'https://www.apachesfilms.fr/films/particules-fines/',
+    pressLabel: 'Voir la bande-annonce sur apachesfilms.fr ↗',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Delphine Malaussena' },
       { role: 'Monteur son', name: 'Geoffrey Perrier' },
@@ -858,6 +875,7 @@ const filmsData = {
   'jeune-fille-de-pierre': {
     title: 'Les extraordinaires mésaventures de la jeune fille de pierre',
     director: 'Gabriel Abrantes',
+    youtubeId: 'w2sdQRVrPps',
     awards: ['Quinzaine des Réalisateurs — Festival de Cannes 2019'],
     soundTeam: [
       { role: 'Chefs opérateurs du son', name: 'Thomas Van Pottelberge, Philippe Deschamps', self: true },
@@ -872,6 +890,7 @@ const filmsData = {
   tigre: {
     title: 'Tigre',
     director: 'Delphine Deloget',
+    embedUrl: 'https://player.vimeo.com/video/376883778',
     awards: ['Berlinale 2019 — sélection compétition', 'Prix Canal+ — Festival de Clermont-Ferrand', 'Meilleur court métrage — Festival de Moscou'],
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Pablo Salaün' },
@@ -932,6 +951,7 @@ const filmsData = {
     director: 'Karima Hamzaoui, Ladj Ly',
     production: 'Lily Films · France Télévisions',
     format: '90 min',
+    pressUrl: 'https://www.francetvpro.fr/contenu-de-presse/9190732',
     soundTeam: [
       { role: 'Montage son et mixage', name: 'Thomas Van Pottelberge', self: true },
     ],
@@ -945,6 +965,8 @@ const filmsData = {
     director: 'Gaetan Chabanol, Nathalie Amsellem, Sylvain Bergère',
     production: 'ARTE · Les Monstres',
     format: 'Saison 1, 20×30 min',
+    pressUrl: 'https://www.arte.tv/fr/videos/080116-011-A/les-grands-mythes-l-odyssee/',
+    pressLabel: 'Voir la bande-annonce sur arte.tv ↗',
     soundTeam: [
       { role: 'Sound design', name: 'Thomas Van Pottelberge', self: true },
       { role: 'Mixage', name: 'Vincent Huré, Christophe Millet' },
@@ -974,6 +996,7 @@ const filmsData = {
     title: 'Le retour de la nature sauvage',
     production: 'ARTE France · Bonne Pioche',
     format: '3×52 min',
+    youtubeId: 'hxPihLKXYfQ',
     soundTeam: [
       { role: 'Monteur son', name: 'Thomas Van Pottelberge', self: true },
     ],
@@ -1000,6 +1023,7 @@ const filmsData = {
     title: 'Demain le feu',
     director: 'Mehdi Meklat, Badroudine Saïd Abdallah',
     production: 'Autoproduit par les réalisateurs',
+    youtubeId: 'yEEgO-9iTn4',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Nassim El Mounabbih' },
       { role: 'Montage son et mixage', name: 'Thomas Van Pottelberge', self: true },
@@ -1012,6 +1036,7 @@ const filmsData = {
   'mensonges-histoire': {
     title: "Les Mensonges de l'Histoire — Le naufrage du Lusitania",
     production: 'Compagnie des Phares et Balises · RMC Découverte',
+    youtubeId: 'mChWLIxhAko',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
     ],
@@ -1024,6 +1049,8 @@ const filmsData = {
     title: 'À la chaleur des années froides',
     director: 'Darius Kaufmann, Eytan Jan',
     production: 'Amok Films · Temps Noir, avec la participation de Canal+',
+    pressUrl: 'https://www.amokfilms.fr/in-the-heat-of-the-cold-years?lang=fr',
+    pressLabel: 'Voir la bande-annonce sur amokfilms.fr ↗',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
       { role: 'Montage son et mixage', name: 'Mathieu Langlet' },
@@ -1061,6 +1088,7 @@ const filmsData = {
   'odyssee-borgey': {
     title: "L'Odyssée des Borgey",
     director: 'Charles Guillemin',
+    youtubeId: '9itSqVnkWjI',
     soundTeam: [
       { role: 'Chef opérateur du son et montage son', name: 'Thomas Van Pottelberge', self: true },
     ],
@@ -1073,6 +1101,7 @@ const filmsData = {
 
 const projectLightbox = document.getElementById('projectLightbox');
 const projectLightboxIframe = document.getElementById('projectLightboxIframe');
+const projectLightboxPress = document.getElementById('projectLightboxPress');
 const projectLightboxClose = document.getElementById('projectLightboxClose');
 const projectTitle = document.getElementById('projectTitle');
 const projectMeta = document.getElementById('projectMeta');
@@ -1169,11 +1198,26 @@ function openProjectLightbox(slug) {
   if (projectLightboxIframe) {
     // Most trailers are hosted on YouTube (youtubeId), but a handful live
     // elsewhere (e.g. Dailymotion) — those set embedUrl directly instead.
-    projectLightboxIframe.src = film.embedUrl
+    const videoSrc = film.embedUrl
       ? film.embedUrl
       : film.youtubeId
       ? `https://www.youtube.com/embed/${film.youtubeId}?rel=0`
       : '';
+    projectLightboxIframe.src = videoSrc;
+    // No trailer to embed, but an external link exists (a press release, or
+    // a site that blocks framing / doesn't host a shareable video) — show a
+    // link to it instead of leaving the frame blank.
+    if (!videoSrc && film.pressUrl) {
+      projectLightboxIframe.hidden = true;
+      if (projectLightboxPress) {
+        projectLightboxPress.href = film.pressUrl;
+        projectLightboxPress.textContent = film.pressLabel || 'Voir le communiqué de presse ↗';
+        projectLightboxPress.hidden = false;
+      }
+    } else {
+      projectLightboxIframe.hidden = false;
+      if (projectLightboxPress) projectLightboxPress.hidden = true;
+    }
   }
 
   projectLightbox.hidden = false;

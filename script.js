@@ -694,6 +694,8 @@ const filmsData = {
     production: 'Artisans du Film · Cinq de Trèfle Productions',
     cast: 'Luna Carpiaux, Cécile Chatignoux, Julie Brochen, Mathieu Genet',
     soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Tanguy Lailler' },
+      { role: 'Monteur son', name: 'Hugo Cohen' },
       { role: 'Mixeur', name: 'Thomas Van Pottelberge', self: true },
     ],
     synopsis: {

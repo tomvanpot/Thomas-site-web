@@ -1041,6 +1041,16 @@ section {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Without this, the [hidden] attribute set by script.js has no effect here:
+   the class's own `display: flex` above (an author style) overrides the
+   browser's default `[hidden] { display: none }`, so the press overlay was
+   staying visible on top of the trailer iframe even when JS marked it
+   hidden. This is the actual root cause of trailers being covered by the
+   "press release" panel. */
+.project-lightbox__press[hidden] {
+  display: none;
+}
+
 .project-lightbox__press:hover {
   color: var(--accent);
   border-color: var(--accent);

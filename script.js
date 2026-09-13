@@ -675,6 +675,8 @@ const filmsData = {
   'la-ligne-de-vie': {
     title: 'La ligne de vie',
     director: 'Hugo Becker',
+    pressUrl: 'https://www.canalplus.com/cinema/la-ligne-de-vie/h/32098653_50615/streaming/',
+    pressLabel: 'Voir le film sur Canal+ ↗',
     awards: ['Mostra de Venise 2025 — sélection officielle (12 courts métrages retenus sur 2350)'],
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Dominique Weigner' },
@@ -1210,10 +1212,21 @@ function openProjectLightbox(slug) {
       ? `https://www.youtube.com/embed/${film.youtubeId}?rel=0`
       : '';
     projectLightboxIframe.src = videoSrc;
-    // Press-release fallback removed: if there's no trailer to embed, just
-    // hide the iframe (no link to an external press page is shown anymore).
-    if (projectLightboxPress) projectLightboxPress.hidden = true;
-    projectLightboxIframe.hidden = !videoSrc;
+    // No trailer to embed, but an external link exists (a press release, or
+    // a site that blocks framing / doesn't host a shareable video) — show a
+    // link to it instead of leaving the frame blank. (The CSS bug that used
+    // to make this panel cover the iframe even when hidden is fixed now.)
+    if (!videoSrc && film.pressUrl) {
+      projectLightboxIframe.hidden = true;
+      if (projectLightboxPress) {
+        projectLightboxPress.href = film.pressUrl;
+        projectLightboxPress.textContent = film.pressLabel || 'Voir le communiqué de presse ↗';
+        projectLightboxPress.hidden = false;
+      }
+    } else {
+      projectLightboxIframe.hidden = false;
+      if (projectLightboxPress) projectLightboxPress.hidden = true;
+    }
   }
 
   projectLightbox.hidden = false;

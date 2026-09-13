@@ -758,7 +758,7 @@ section {
   color: #d8d6cf;
 }
 
-.apropos__body p + p { margin-top: 28px; }
+.apropos__body p + p { margin-top: 0; }
 
 .apropos__body em {
   font-style: italic;

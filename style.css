@@ -82,6 +82,7 @@ body {
 }
 
 .nav__name {
+  margin: 0;
   font-family: 'Josefin Sans', var(--sans);
   font-weight: 300;
   font-size: 25px;

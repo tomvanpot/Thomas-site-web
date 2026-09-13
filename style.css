@@ -1034,7 +1034,7 @@ section {
   padding: 24px;
   background-color: var(--bg-alt);
   background-size: cover;
-  background-position: center 20%;
+  background-position: center top;
   color: #fff;
   font-family: var(--sans);
   font-size: 15px;

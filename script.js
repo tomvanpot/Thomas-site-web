@@ -739,6 +739,7 @@ const filmsData = {
     title: 'La Grande Ourse',
     director: 'Anthony Bajon',
     pressUrl: 'https://www.canalplus.com/cinema/la-grande-ourse/h/29470653_50002',
+    pressImage: 'assets/wall/la-grande-ourse-still.jpg',
     pressLabel: 'Voir le film sur Canal+ ↗',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Rémi Chanaud' },
@@ -1220,13 +1221,12 @@ function openProjectLightbox(slug) {
       projectLightboxIframe.hidden = true;
       if (projectLightboxPress) {
         projectLightboxPress.href = film.pressUrl;
-        // Use the film's own poster (already on the page) as the panel's
-        // background image, so it reads like a video thumbnail rather than
-        // a plain text box.
+        // Use a dedicated still (film.pressImage) when set, otherwise fall
+        // back to the film's own poster already on the page — so it reads
+        // like a video thumbnail rather than a plain text box.
         const posterEl = document.querySelector(`img[data-film="${slug}"]`);
-        projectLightboxPress.style.backgroundImage = posterEl
-          ? `url("${posterEl.src}")`
-          : '';
+        const bgSrc = film.pressImage || (posterEl ? posterEl.src : '');
+        projectLightboxPress.style.backgroundImage = bgSrc ? `url("${bgSrc}")` : '';
         const label = film.pressLabel || 'Voir le communiqué de presse ↗';
         projectLightboxPress.innerHTML = '';
         const labelSpan = document.createElement('span');

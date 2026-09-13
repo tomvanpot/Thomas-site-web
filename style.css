@@ -4,6 +4,13 @@ html { scroll-behavior: smooth; background: #000; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 
+/* Applied to <body> while any lightbox/overlay (trailer, project fiche,
+   gallery) is open — stops the page scrolling behind it, which is
+   especially noticeable/annoying on mobile touchscreens. */
+body.no-scroll {
+  overflow: hidden;
+}
+
 /* ---------- tokens ---------- */
 :root {
   --bg: #000;
@@ -898,6 +905,11 @@ section {
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.25s ease, color 0.25s ease;
+  /* Keeps the actual tap target comfortably large on touch screens even
+     though the visible "×" glyph stays small — the padding is invisible
+     (no background/border) so it doesn't change how the button looks. */
+  padding: 14px;
+  margin: -14px;
 }
 
 .lightbox__close:hover {

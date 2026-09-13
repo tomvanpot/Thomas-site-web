@@ -353,17 +353,33 @@ function showLightboxImage(index) {
   }
 }
 
+// Any open lightbox/overlay locks page scroll behind it — otherwise, on
+// mobile, the page keeps scrolling/rubber-banding under the fixed overlay
+// while a trailer or gallery image is open. Ref-counted so nested/overlapping
+// opens (rare, but e.g. a fast tap sequence) don't unlock too early.
+let openOverlayCount = 0;
+function lockBodyScroll() {
+  openOverlayCount += 1;
+  document.body.classList.add('no-scroll');
+}
+function unlockBodyScroll() {
+  openOverlayCount = Math.max(0, openOverlayCount - 1);
+  if (openOverlayCount === 0) document.body.classList.remove('no-scroll');
+}
+
 function openLightbox(index) {
   if (!lightbox || !lightboxImg || galleryImgs.length === 0) return;
   showLightboxImage(index);
   lightbox.hidden = false;
   void lightbox.offsetWidth; // force reflow so the fade-in actually plays
   lightbox.classList.add('is-visible');
+  lockBodyScroll();
 }
 
 function closeLightbox() {
   if (!lightbox) return;
   lightbox.classList.remove('is-visible');
+  unlockBodyScroll();
   window.setTimeout(() => {
     lightbox.hidden = true;
   }, 300);
@@ -415,11 +431,13 @@ function openVideoLightbox(videoId) {
   videoLightbox.hidden = false;
   void videoLightbox.offsetWidth;
   videoLightbox.classList.add('is-visible');
+  lockBodyScroll();
 }
 
 function closeVideoLightbox() {
   if (!videoLightbox || !videoLightboxIframe) return;
   videoLightbox.classList.remove('is-visible');
+  unlockBodyScroll();
   window.setTimeout(() => {
     videoLightbox.hidden = true;
     videoLightboxIframe.src = '';
@@ -1250,10 +1268,12 @@ function openProjectLightbox(slug) {
   projectLightbox.hidden = false;
   void projectLightbox.offsetWidth;
   projectLightbox.classList.add('is-visible');
+  lockBodyScroll();
 }
 
 function closeProjectLightbox() {
   if (!projectLightbox) return;
+  if (projectLightbox.classList.contains('is-visible')) unlockBodyScroll();
   projectLightbox.classList.remove('is-visible');
   if (projectLightboxCloseTimer) window.clearTimeout(projectLightboxCloseTimer);
   projectLightboxCloseTimer = window.setTimeout(() => {

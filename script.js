@@ -1210,20 +1210,10 @@ function openProjectLightbox(slug) {
       ? `https://www.youtube.com/embed/${film.youtubeId}?rel=0`
       : '';
     projectLightboxIframe.src = videoSrc;
-    // No trailer to embed, but an external link exists (a press release, or
-    // a site that blocks framing / doesn't host a shareable video) — show a
-    // link to it instead of leaving the frame blank.
-    if (!videoSrc && film.pressUrl) {
-      projectLightboxIframe.hidden = true;
-      if (projectLightboxPress) {
-        projectLightboxPress.href = film.pressUrl;
-        projectLightboxPress.textContent = film.pressLabel || 'Voir le communiqué de presse ↗';
-        projectLightboxPress.hidden = false;
-      }
-    } else {
-      projectLightboxIframe.hidden = false;
-      if (projectLightboxPress) projectLightboxPress.hidden = true;
-    }
+    // Press-release fallback removed: if there's no trailer to embed, just
+    // hide the iframe (no link to an external press page is shown anymore).
+    if (projectLightboxPress) projectLightboxPress.hidden = true;
+    projectLightboxIframe.hidden = !videoSrc;
   }
 
   projectLightbox.hidden = false;

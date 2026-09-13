@@ -1220,7 +1220,19 @@ function openProjectLightbox(slug) {
       projectLightboxIframe.hidden = true;
       if (projectLightboxPress) {
         projectLightboxPress.href = film.pressUrl;
-        projectLightboxPress.textContent = film.pressLabel || 'Voir le communiqué de presse ↗';
+        // Use the film's own poster (already on the page) as the panel's
+        // background image, so it reads like a video thumbnail rather than
+        // a plain text box.
+        const posterEl = document.querySelector(`img[data-film="${slug}"]`);
+        projectLightboxPress.style.backgroundImage = posterEl
+          ? `url("${posterEl.src}")`
+          : '';
+        const label = film.pressLabel || 'Voir le communiqué de presse ↗';
+        projectLightboxPress.innerHTML = '';
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'project-lightbox__press__label';
+        labelSpan.textContent = label;
+        projectLightboxPress.appendChild(labelSpan);
         projectLightboxPress.hidden = false;
       }
     } else {

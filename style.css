@@ -1028,17 +1028,42 @@ section {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   text-align: center;
   padding: 24px;
-  background: var(--bg-alt);
-  color: var(--ink);
+  background-color: var(--bg-alt);
+  background-size: cover;
+  background-position: center 20%;
+  color: #fff;
   font-family: var(--sans);
   font-size: 15px;
   letter-spacing: 0.03em;
   border: 1px solid var(--line);
   transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.project-lightbox__press::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.15) 55%, rgba(0, 0, 0, 0) 100%);
+}
+
+.project-lightbox__press__label {
+  position: relative;
+  z-index: 1;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.project-lightbox__press:hover .project-lightbox__press__label {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* Without this, the [hidden] attribute set by script.js has no effect here:

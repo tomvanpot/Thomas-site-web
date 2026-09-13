@@ -897,17 +897,24 @@ section {
   position: absolute;
   top: 24px;
   right: 28px;
-  background: none;
+  /* Sits above the trailer/gallery content next to it in the DOM (which
+     would otherwise paint on top of it, since same-stacking-level
+     positioned elements paint in DOM order) — without this the close
+     button became un-clickable once the video frame started spanning
+     full width on mobile and ended up underneath it. */
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.4);
   border: none;
+  border-radius: 50%;
   color: var(--ink);
   font-size: 32px;
   line-height: 1;
   cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.25s ease, color 0.25s ease;
+  opacity: 0.85;
+  transition: opacity 0.25s ease, color 0.25s ease, background 0.25s ease;
   /* Keeps the actual tap target comfortably large on touch screens even
-     though the visible "×" glyph stays small — the padding is invisible
-     (no background/border) so it doesn't change how the button looks. */
+     though the visible "×" glyph stays small — the negative margin keeps
+     the button's visual position unchanged despite the added padding. */
   padding: 14px;
   margin: -14px;
 }

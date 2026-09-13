@@ -696,6 +696,10 @@ const filmsData = {
     soundTeam: [
       { role: 'Mixeur', name: 'Thomas Van Pottelberge', self: true },
     ],
+    synopsis: {
+      fr: "Guyane, bagne des femmes, 1885. Louise purge une peine dans un couvent à des milliers de kilomètres de la France. Lorsque l'administration pénitentiaire improvise des mariages arrangés avec d'anciens bagnards pour peupler la colonie, Louise tombe sous le charme d'Eugène, un ancien faussaire. Leur union permettrait à Louise de retrouver sa liberté et démarrer une nouvelle vie mais à quel prix... ?",
+      en: "French Guiana, women's penal colony, 1885. Louise is serving her sentence in a convent thousands of miles from France. When the prison administration improvises arranged marriages with former convicts to populate the colony, Louise falls for Eugène, a former forger. Their union could give her back her freedom and a new life — but at what cost...?",
+    },
   },
   mardochi: {
     title: 'Mardochi',

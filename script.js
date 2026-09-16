@@ -1072,6 +1072,7 @@ const filmsData = {
     production: 'Amok Films · Temps Noir, avec la participation de Canal+',
     pressUrl: 'https://www.amokfilms.fr/in-the-heat-of-the-cold-years?lang=fr',
     pressLabel: 'Voir la bande-annonce sur amokfilms.fr ↗',
+    pressImage: 'assets/wall/chaleur-annees-froides-still.jpg',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
       { role: 'Montage son et mixage', name: 'Mathieu Langlet' },

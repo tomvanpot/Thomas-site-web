@@ -987,6 +987,7 @@ const filmsData = {
     format: 'Saison 1, 20×30 min',
     pressUrl: 'https://www.arte.tv/fr/videos/080116-011-A/les-grands-mythes-l-odyssee/',
     pressLabel: 'Voir la bande-annonce sur arte.tv ↗',
+    pressImage: 'assets/wall/grands-mythes-still.jpg',
     soundTeam: [
       { role: 'Sound design', name: 'Thomas Van Pottelberge', self: true },
       { role: 'Mixage', name: 'Vincent Huré, Christophe Millet' },

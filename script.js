@@ -828,19 +828,27 @@ const filmsData = {
       en: "Every summer, Chloé goes to the same campsite. But this year she's going without her family, more than ever to escape her everyday life. There she reunites with Alexia, her childhood friend, who lives there and is training for her next boxing match.",
     },
   },
-  'the-loyal-man': {
-    title: 'The Loyal Man',
-    director: 'Lawrence Valin',
-    youtubeId: 'PViFOeiwcew',
-    awards: ['Prix Adami de la meilleure interprétation masculine — Festival de Clermont-Ferrand'],
+  'la-voix-de-son-maitre': {
+    title: 'La Voix de son maître',
+    director: 'Alexandre Pierrin',
+    format: 'Court métrage',
+    cast: 'Florence Janas, Ferdinand Redouloux',
+    pressUrl: 'https://www.canalplus.com/cinema/la-voix-de-son-maitre/h/31455478_50002',
+    pressLabel: 'Voir la bande-annonce sur Canal+ ↗',
+    awards: [
+      'Compétition — Festival international du film fantastique de Gérardmer 2025',
+      'En compétition — PIFFF 2024',
+      'Sélection officielle — Paris Courts Devant 2025',
+      'Sélection officielle — Festival de Dinan 2024',
+    ],
     soundTeam: [
-      { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
-      { role: 'Monteur son', name: 'Clément Gallice' },
-      { role: 'Mixeur', name: 'Clément Laforce' },
+      { role: 'Son', name: 'Claire Bernengo' },
+      { role: 'Montage son et sound design', name: 'Anna Buy' },
+      { role: 'Mixage', name: 'Thomas Van Pottelberge, Gregory Gaby', self: true },
     ],
     synopsis: {
-      fr: "Homme de main solitaire et dévoué, Aathi travaille le jour dans une épicerie et conduit la nuit des sans-papiers pour le compte d'un parrain de la mafia tamoule à Paris surnommé « Monsieur ». Aathi n'a jamais pensé qu'au devoir, jusqu'à ce que sa route croise celle de Minnale, une sans-papiers livrée à elle-même.",
-      en: "A solitary, devoted henchman, Aathi works days in a grocery store and drives undocumented migrants by night for a Tamil mafia boss in Paris known as \"Monsieur.\" Aathi has only ever thought of duty, until his path crosses that of Minnale, an undocumented migrant left to fend for herself.",
+      fr: "Adam, 15 ans, vit avec sa mère Inès, scientifique, qui mène en secret des expériences sur des animaux d'élevage en leur implantant des puces pour les contrôler. Quand ses expériences réussissent mais lui échappent, Adam tente tant bien que mal de capter l'attention de sa mère au milieu du chaos qui s'installe.",
+      en: "15-year-old Adam lives with his mother Inès, a scientist secretly conducting experiments on farm animals by implanting them with chips to control them. When her experiments succeed but spiral out of her control, Adam struggles to get his mother's attention amid the growing chaos.",
     },
   },
   coqueluche: {

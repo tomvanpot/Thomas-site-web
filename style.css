@@ -388,9 +388,12 @@ section[hidden] {
   animation: poster-group-in 0.65s cubic-bezier(0.2, 1, 0.35, 1) both;
 }
 
-.poster-wall.is-landing img,
-.apropos__gallery.is-landing img {
+.poster-wall.is-landing img {
   animation: poster-landing-in 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.apropos__gallery.is-landing img {
+  animation: gallery-landing-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
 .landing-el {
@@ -420,6 +423,17 @@ section[hidden] {
     opacity: 1;
     transform: translateY(0) scale(1);
     filter: blur(0) grayscale(0.25) brightness(0.95) saturate(1);
+  }
+}
+
+@keyframes gallery-landing-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

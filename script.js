@@ -1127,6 +1127,7 @@ const filmsData = {
     youtubeId: 'JJ1NA-L_uRM',
     soundTeam: [
       { role: 'Ingénieur du son post-synchros', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Mixeur', name: 'Victor Pierre' },
     ],
     synopsis: {
       fr: "Trois ans après les événements de la saison 2, Lux coule des jours heureux avec Charlie dans une ferme isolée. Contraint de sortir de sa retraite pour hacker une start-up spécialisée en intelligence artificielle, il déclenche malgré lui une machination qui mène à l'arrestation de Charlie à sa place. Entre deepfakes, mensonges et trahisons, il devra démêler le vrai du faux pour l'innocenter.",

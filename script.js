@@ -974,6 +974,7 @@ const filmsData = {
     format: '90 min',
     pressUrl: 'https://www.francetvpro.fr/contenu-de-presse/9190732',
     soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Éric Kousiguian' },
       { role: 'Montage son et mixage', name: 'Thomas Van Pottelberge', self: true },
     ],
     synopsis: {

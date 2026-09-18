@@ -957,7 +957,7 @@ const filmsData = {
     director: 'Mathieu Schwartz, Christian Twente',
     production: 'ARTE · ZDF',
     format: '90 min',
-    embedUrl: 'https://www.dailymotion.com/embed/video/x86rehv',
+    embedUrl: 'https://www.dailymotion.com/embed/video/x86rehv?autoplay=0',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge', self: true },
       { role: 'Mixage', name: 'Mathieu Langlet' },

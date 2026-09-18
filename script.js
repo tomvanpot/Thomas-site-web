@@ -118,25 +118,37 @@ const landingEffectTimeouts = new WeakMap();
 
 function playLandingEffect(wallEl) {
   if (!wallEl) return;
-  const imgs = wallEl.querySelectorAll('img');
 
   const pendingCleanup = landingEffectTimeouts.get(wallEl);
   if (pendingCleanup) window.clearTimeout(pendingCleanup);
 
   wallEl.classList.remove('is-landing');
-  void wallEl.offsetWidth; // force reflow so the animation can replay
 
-  imgs.forEach((img, i) => {
-    img.style.animationDelay = `${(i % 5) * 18}ms`;
+  // A plain offsetWidth reflow isn't always enough to restart the animation
+  // reliably when this runs in the same tick as an ancestor's `hidden`
+  // attribute being cleared (e.g. arriving on À propos: the section goes
+  // from display:none to visible and the gallery animation is kicked off
+  // in that very same script execution). Some browsers haven't finished a
+  // layout/paint pass at that point, so the class toggle doesn't always
+  // register as a fresh restart — the intermittent "glitch" some users see.
+  // Waiting two animation frames guarantees a full paint has happened
+  // between removing and re-adding the class, which is the robust fix.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      const imgs = wallEl.querySelectorAll('img');
+      imgs.forEach((img, i) => {
+        img.style.animationDelay = `${(i % 5) * 18}ms`;
+      });
+
+      wallEl.classList.add('is-landing');
+
+      const cleanupId = window.setTimeout(() => {
+        wallEl.classList.remove('is-landing');
+        landingEffectTimeouts.delete(wallEl);
+      }, 1300);
+      landingEffectTimeouts.set(wallEl, cleanupId);
+    });
   });
-
-  wallEl.classList.add('is-landing');
-
-  const cleanupId = window.setTimeout(() => {
-    wallEl.classList.remove('is-landing');
-    landingEffectTimeouts.delete(wallEl);
-  }, 1300);
-  landingEffectTimeouts.set(wallEl, cleanupId);
 }
 
 // --- Hero categories: Cinéma / Documentaires ---

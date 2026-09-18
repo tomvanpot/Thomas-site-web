@@ -1141,6 +1141,8 @@ const filmsData = {
     format: 'Saisons 1-2, 20×7 min, 2017-2018',
     youtubeId: 'TV3Xm0Kh2vQ',
     soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Lucas Rollin' },
+      { role: 'Montage son', name: 'Benoît Déchaut' },
       { role: 'Mixeur', name: 'Thomas Van Pottelberge', self: true },
     ],
     synopsis: {

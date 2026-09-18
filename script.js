@@ -945,6 +945,7 @@ const filmsData = {
     youtubeId: 'MWEJwTdkI-k',
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Thomas Van Pottelberge, Nassim El Mounnabih, Jean Christophe Lion', self: true },
+      { role: 'Montage son et mixage', name: 'Airi Mori, Patrick Pankratz' },
     ],
     synopsis: {
       fr: "Docusérie qui suit de jeunes footballeurs du club FC Montfermeil dans leur ascension vers le monde professionnel.",

@@ -191,12 +191,16 @@ const initialView = ['apropos', 'contact', 'filmo'].includes(window.location.has
   ? window.location.hash.slice(1)
   : 'home';
 showView(initialView);
+if (initialView === 'apropos') {
+  playLandingEffect(document.getElementById('apropos-gallery'));
+}
 
 const navAproposLink = document.getElementById('navAproposLink');
 if (navAproposLink) {
   navAproposLink.addEventListener('click', (e) => {
     e.preventDefault();
     showView('apropos');
+    playLandingEffect(document.getElementById('apropos-gallery'));
   });
 }
 

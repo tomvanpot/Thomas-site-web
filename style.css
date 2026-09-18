@@ -388,7 +388,8 @@ section[hidden] {
   animation: poster-group-in 0.65s cubic-bezier(0.2, 1, 0.35, 1) both;
 }
 
-.poster-wall.is-landing img {
+.poster-wall.is-landing img,
+.apropos__gallery.is-landing img {
   animation: poster-landing-in 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 

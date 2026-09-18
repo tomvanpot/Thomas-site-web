@@ -1022,6 +1022,8 @@ const filmsData = {
     youtubeId: 'hxPihLKXYfQ',
     soundTeam: [
       { role: 'Monteur son', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Enregistrements voix off', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Mixage', name: 'Axel Guenoun' },
     ],
     synopsis: {
       fr: "Documentaire consacré au retour de la nature sauvage, entre reconquête des espaces et cohabitation avec la faune.",

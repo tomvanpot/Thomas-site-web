@@ -1119,6 +1119,48 @@ const filmsData = {
       en: "Elsa and Frédéric Borgey leave everything behind to settle in Lapland and devote themselves to raising and driving sled dogs.",
     },
   },
+  stalk: {
+    title: 'Stalk (saison 3)',
+    director: 'Jean-Charles Paugam, Simon Bouisson',
+    production: 'Silex Films · France Télévisions',
+    format: 'Saison 3, 10 épisodes, 2025',
+    youtubeId: 'JJ1NA-L_uRM',
+    soundTeam: [
+      { role: 'Ingénieur du son post-synchros', name: 'Thomas Van Pottelberge', self: true },
+    ],
+    synopsis: {
+      fr: "Trois ans après les événements de la saison 2, Lux coule des jours heureux avec Charlie dans une ferme isolée. Contraint de sortir de sa retraite pour hacker une start-up spécialisée en intelligence artificielle, il déclenche malgré lui une machination qui mène à l'arrestation de Charlie à sa place. Entre deepfakes, mensonges et trahisons, il devra démêler le vrai du faux pour l'innocenter.",
+      en: "Three years after the events of season 2, Lux is living a quiet life with Charlie on an isolated farm. Forced out of retirement to hack an AI start-up, he unwittingly sets off a scheme that gets Charlie arrested in his place. Amid deepfakes, lies and betrayals, he must separate truth from fiction to clear her name.",
+    },
+  },
+  loulou: {
+    title: 'Loulou (mini-série)',
+    director: 'Alice Vial, Louise Massin',
+    production: 'ARTE France',
+    format: 'Saisons 1-2, 20×7 min, 2017-2018',
+    youtubeId: 'TV3Xm0Kh2vQ',
+    soundTeam: [
+      { role: 'Mixeur', name: 'Thomas Van Pottelberge', self: true },
+    ],
+    synopsis: {
+      fr: "Mini-série qui suit une jeune femme confrontée à une grossesse imprévue et au choix d'assumer seule sa maternité, puis l'éducation de son enfant au fil des saisons.",
+      en: "A mini-series following a young woman facing an unplanned pregnancy and the choice to embrace single motherhood, and later the raising of her child across seasons.",
+    },
+  },
+  sintonia: {
+    title: 'Sintonia (saison 3)',
+    director: 'Johnny Araújo, Daniela Carvalho',
+    production: 'Netflix',
+    format: 'Saison 3, 2019',
+    youtubeId: 'uvGFTO-DQFg',
+    soundTeam: [
+      { role: 'Chef opérateur du son (renforts)', name: 'Thomas Van Pottelberge', self: true },
+    ],
+    synopsis: {
+      fr: "Série brésilienne qui suit trois amis d'enfance dans une favela de São Paulo, entre musique, trafic de drogue et religion, alors que leurs chemins s'éloignent peu à peu.",
+      en: "A Brazilian series following three childhood friends in a São Paulo favela, navigating music, drug trafficking and religion as their paths gradually diverge.",
+    },
+  },
 };
 
 const projectLightbox = document.getElementById('projectLightbox');

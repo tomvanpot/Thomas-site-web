@@ -44,7 +44,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
   }, { passive: true });
 })();
 
-const FADE_MS = 260;
+const FADE_MS = 180;
 
 // Crossfade helper: fades `fromEl` out, swaps `hidden` on both, fades `toEl` in.
 function crossfade(fromEl, toEl) {

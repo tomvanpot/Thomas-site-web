@@ -234,12 +234,7 @@ const navNameLink = document.getElementById('navNameLink');
 if (navNameLink) {
   navNameLink.addEventListener('click', (e) => {
     e.preventDefault();
-    const isHome = homeSections.length > 0 && !homeSections[0].hidden;
-    if (isHome) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      showView('home');
-    }
+    resetToHome();
   });
 }
 

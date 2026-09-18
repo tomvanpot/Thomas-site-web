@@ -393,7 +393,7 @@ section[hidden] {
 }
 
 .apropos__gallery.is-landing img {
-  animation: gallery-landing-in 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: gallery-landing-in 0.4s ease-out both;
 }
 
 .landing-el {
@@ -429,11 +429,9 @@ section[hidden] {
 @keyframes gallery-landing-in {
   0% {
     opacity: 0;
-    transform: translateY(-6px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 

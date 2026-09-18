@@ -1021,8 +1021,7 @@ const filmsData = {
     format: '3×52 min',
     youtubeId: 'hxPihLKXYfQ',
     soundTeam: [
-      { role: 'Monteur son', name: 'Thomas Van Pottelberge', self: true },
-      { role: 'Enregistrements voix off', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Enregistrement voix off et montage son', name: 'Thomas Van Pottelberge', self: true },
       { role: 'Mixage', name: 'Axel Guenoun' },
     ],
     synopsis: {

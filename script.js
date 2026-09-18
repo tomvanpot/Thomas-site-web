@@ -1105,6 +1105,7 @@ const filmsData = {
     youtubeId: 'odEy0VfVAmo',
     soundTeam: [
       { role: 'Chef opérateur du son et montage son', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Mixeur', name: 'Charli Masson' },
     ],
     synopsis: {
       fr: "Portrait de jeunes religieuses au sein d'une congrégation, entre vie spirituelle et vie quotidienne, à travers le Brésil, la Tanzanie et les Philippines.",
@@ -1117,6 +1118,7 @@ const filmsData = {
     youtubeId: '9itSqVnkWjI',
     soundTeam: [
       { role: 'Chef opérateur du son et montage son', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Mixeur', name: 'Charli Masson' },
     ],
     synopsis: {
       fr: "Elsa et Frédéric Borgey quittent tout pour s'installer en Laponie et se consacrer à l'élevage et à la conduite de chiens de traîneau.",

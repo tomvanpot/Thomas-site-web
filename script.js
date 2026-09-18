@@ -108,9 +108,20 @@ function playGroupEffect(wallEl) {
 // A light, capped stagger keeps it from looking either perfectly flat or
 // like a slow top-to-bottom cascade. Used once for the very first mosaic
 // the visitor sees on page load.
+// Tracks the pending "remove is-landing" cleanup per wall, same reasoning
+// as groupEffectTimeouts below: replaying this effect before the previous
+// call's cleanup has fired (e.g. clicking À propos again shortly after
+// leaving it) would otherwise let that stale timeout cut the new, restarted
+// animation short — snapping images to full opacity mid-fade instead of
+// finishing smoothly. That's the intermittent "glitch" on the À propos page.
+const landingEffectTimeouts = new WeakMap();
+
 function playLandingEffect(wallEl) {
   if (!wallEl) return;
   const imgs = wallEl.querySelectorAll('img');
+
+  const pendingCleanup = landingEffectTimeouts.get(wallEl);
+  if (pendingCleanup) window.clearTimeout(pendingCleanup);
 
   wallEl.classList.remove('is-landing');
   void wallEl.offsetWidth; // force reflow so the animation can replay
@@ -121,9 +132,11 @@ function playLandingEffect(wallEl) {
 
   wallEl.classList.add('is-landing');
 
-  window.setTimeout(() => {
+  const cleanupId = window.setTimeout(() => {
     wallEl.classList.remove('is-landing');
+    landingEffectTimeouts.delete(wallEl);
   }, 1300);
+  landingEffectTimeouts.set(wallEl, cleanupId);
 }
 
 // --- Hero categories: Cinéma / Documentaires ---
@@ -213,12 +226,23 @@ if (navAproposLink) {
 // Ultra-light fade played on a whole view section as it's shown — much
 // subtler than the mosaic landing/gather effects, just a quick opacity
 // tick so the page doesn't feel like it's snapping between views.
+const viewFadeTimeouts = new WeakMap();
+
 function playViewFadeIn(el) {
   if (!el) return;
+
+  const pendingCleanup = viewFadeTimeouts.get(el);
+  if (pendingCleanup) window.clearTimeout(pendingCleanup);
+
   el.classList.remove('view-fade-in');
   void el.offsetWidth; // force reflow so the animation can replay
   el.classList.add('view-fade-in');
-  window.setTimeout(() => el.classList.remove('view-fade-in'), 400);
+
+  const cleanupId = window.setTimeout(() => {
+    el.classList.remove('view-fade-in');
+    viewFadeTimeouts.delete(el);
+  }, 400);
+  viewFadeTimeouts.set(el, cleanupId);
 }
 
 const navContactLink = document.getElementById('navContactLink');

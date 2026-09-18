@@ -134,9 +134,12 @@ const panels = document.querySelectorAll('.hero__panel');
 // Each panel is now a single merged mosaic (no more Longs/Courts or
 // Séries/Unitaires sub-tabs), so this just swaps panels and replays that
 // panel's gather effect.
+const WALL_ID_BY_CATEGORY = { docs: 'wall-docs-all', series: 'wall-series', cinema: 'wall-longs' };
+
 function setCategory(target, { animate = true } = {}) {
   const currentPanel = Array.from(panels).find((p) => !p.hidden);
   const nextPanel = Array.from(panels).find((p) => p.dataset.panel === target);
+  const wallEl = document.getElementById(WALL_ID_BY_CATEGORY[target]);
 
   categoryButtons.forEach((b) => {
     const active = b.dataset.category === target;
@@ -144,27 +147,23 @@ function setCategory(target, { animate = true } = {}) {
     b.setAttribute('aria-selected', active ? 'true' : 'false');
   });
 
-  if (target === 'docs') {
-    window.setTimeout(() => playGroupEffect(document.getElementById('wall-docs-all')), FADE_MS);
-  }
-  if (target === 'series') {
-    window.setTimeout(() => playGroupEffect(document.getElementById('wall-series')), FADE_MS);
-  }
-  if (target === 'cinema') {
-    window.setTimeout(() => playGroupEffect(document.getElementById('wall-longs')), FADE_MS);
-  }
+  // Only crossfade (and delay the gather effect to match) when we're
+  // actually swapping between two visible panels. When there's nothing to
+  // fade out — e.g. returning to the home mosaic from À propos/CV/Contact,
+  // where the panel underneath never changed while hidden — play the
+  // gather effect immediately instead of after a pointless FADE_MS delay,
+  // which otherwise reads as a jarring "pop then re-animate" on arrival.
+  const willCrossfade = animate && currentPanel && nextPanel && currentPanel !== nextPanel;
 
-  if (!currentPanel || currentPanel === nextPanel || !nextPanel) {
-    if (nextPanel) nextPanel.hidden = false;
+  if (willCrossfade) {
+    crossfade(currentPanel, nextPanel);
+    window.setTimeout(() => playGroupEffect(wallEl), FADE_MS);
     return;
   }
 
-  if (animate) {
-    crossfade(currentPanel, nextPanel);
-  } else {
-    currentPanel.hidden = true;
-    nextPanel.hidden = false;
-  }
+  if (nextPanel) nextPanel.hidden = false;
+  if (currentPanel && currentPanel !== nextPanel) currentPanel.hidden = true;
+  playGroupEffect(wallEl);
 }
 
 categoryButtons.forEach((btn) => {

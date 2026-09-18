@@ -1090,7 +1090,7 @@ const filmsData = {
     director: 'Dan Assayag',
     youtubeId: 't4LKSFBX9h0',
     soundTeam: [
-      { role: 'Chef opérateur du son (saisons 1-2)', name: 'Thomas Van Pottelberge, Axel Guenoun', self: true },
+      { role: 'Chef opérateur du son (saisons 1-2-3)', name: 'Thomas Van Pottelberge, Axel Guenoun', self: true },
       { role: 'Mixage (saisons 1-2-3)', name: 'Thomas Van Pottelberge', self: true },
     ],
     synopsis: {

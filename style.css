@@ -435,6 +435,19 @@ section[hidden] {
   }
 }
 
+.view-fade-in {
+  animation: view-fade-in 0.35s ease-out both;
+}
+
+@keyframes view-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes poster-group-in {
   0% {
     opacity: 0;

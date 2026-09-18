@@ -192,7 +192,12 @@ const initialView = ['apropos', 'contact', 'filmo'].includes(window.location.has
   : 'home';
 showView(initialView);
 if (initialView === 'apropos') {
+  aproposSections.forEach((el) => playViewFadeIn(el));
   playLandingEffect(document.getElementById('apropos-gallery'));
+} else if (initialView === 'contact') {
+  playViewFadeIn(contactSection);
+} else if (initialView === 'filmo') {
+  playViewFadeIn(filmoSection);
 }
 
 const navAproposLink = document.getElementById('navAproposLink');
@@ -200,8 +205,20 @@ if (navAproposLink) {
   navAproposLink.addEventListener('click', (e) => {
     e.preventDefault();
     showView('apropos');
+    aproposSections.forEach((el) => playViewFadeIn(el));
     playLandingEffect(document.getElementById('apropos-gallery'));
   });
+}
+
+// Ultra-light fade played on a whole view section as it's shown — much
+// subtler than the mosaic landing/gather effects, just a quick opacity
+// tick so the page doesn't feel like it's snapping between views.
+function playViewFadeIn(el) {
+  if (!el) return;
+  el.classList.remove('view-fade-in');
+  void el.offsetWidth; // force reflow so the animation can replay
+  el.classList.add('view-fade-in');
+  window.setTimeout(() => el.classList.remove('view-fade-in'), 400);
 }
 
 const navContactLink = document.getElementById('navContactLink');
@@ -209,6 +226,7 @@ if (navContactLink) {
   navContactLink.addEventListener('click', (e) => {
     e.preventDefault();
     showView('contact');
+    playViewFadeIn(contactSection);
   });
 }
 
@@ -217,6 +235,7 @@ if (navCvLink) {
   navCvLink.addEventListener('click', (e) => {
     e.preventDefault();
     showView('filmo');
+    playViewFadeIn(filmoSection);
   });
 }
 

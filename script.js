@@ -1126,6 +1126,8 @@ const filmsData = {
     format: 'Saison 3, 10 épisodes, 2025',
     youtubeId: 'JJ1NA-L_uRM',
     soundTeam: [
+      { role: 'Chef opérateur du son', name: 'Romain de Gueltz' },
+      { role: 'Montage son', name: 'Pablo Chazel' },
       { role: 'Ingénieur du son post-synchros', name: 'Thomas Van Pottelberge', self: true },
       { role: 'Mixeur', name: 'Victor Pierre' },
     ],

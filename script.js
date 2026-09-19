@@ -598,6 +598,9 @@ const filmsData = {
     awards: ['Berlinale 2023 — sélection officielle'],
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Michael Gassert' },
+      { role: 'Montage son', name: 'Arnaud Marten, Frédéric Le Louët' },
+      { role: 'Renforts montage son', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Mixeur', name: 'Julien Perez' },
     ],
     synopsis: {
       fr: "Chauffeur VTC, Ralphie peine à faire face à la grossesse de sa compagne. Rongé par des forces qui le dépassent et par ses propres démons, il rencontre une mystérieuse communauté d'hommes qui l'accueille comme un des leurs — jusqu'à ce que la pression fasse tout basculer.",

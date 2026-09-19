@@ -755,6 +755,7 @@ const filmsData = {
     soundTeam: [
       { role: 'Chef opérateur du son', name: 'Dominique Weigner' },
       { role: 'Monteur son', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Renfort montage son', name: 'Timothée Bost' },
       { role: 'Mixeur', name: 'Damien Lazzerini' },
     ],
     synopsis: {

@@ -1230,6 +1230,8 @@ const filmsData = {
     youtubeId: 'uvGFTO-DQFg',
     soundTeam: [
       { role: 'Chef opérateur du son (renforts)', name: 'Thomas Van Pottelberge', self: true },
+      { role: 'Monteur son', name: 'Luciano Komirchuk' },
+      { role: 'Mixeur', name: 'Vitor Moraes' },
     ],
     synopsis: {
       fr: "Série brésilienne qui suit trois amis d'enfance dans une favela de São Paulo, entre musique, trafic de drogue et religion, alors que leurs chemins s'éloignent peu à peu.",

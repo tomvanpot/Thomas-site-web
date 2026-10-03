@@ -61,7 +61,7 @@
   gtag('config', 'G-969CKSD9G0');
 </script>
 
-<link rel="stylesheet" href="style.css?v=16">
+<link rel="stylesheet" href="style.css?v=17">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -93,14 +93,14 @@
   <section class="hero" id="top">
     <div class="hero__content">
       <div class="hero__categories" role="tablist">
-        <button type="button" class="hero__category is-active" data-category="cinema" role="tab" aria-selected="true" data-en="Fiction">Fiction</button>
-        <button type="button" class="hero__category hero__category--white" data-category="docs" role="tab" aria-selected="false" data-en="Documentaries">Documentaires</button>
-        <button type="button" class="hero__category hero__category--white" data-category="series" role="tab" aria-selected="false" data-en="Series">Séries</button>
+        <button type="button" class="hero__category is-active is-landing-pending" data-category="cinema" role="tab" aria-selected="true" data-en="Fiction">Fiction</button>
+        <button type="button" class="hero__category hero__category--white is-landing-pending" data-category="docs" role="tab" aria-selected="false" data-en="Documentaries">Documentaires</button>
+        <button type="button" class="hero__category hero__category--white is-landing-pending" data-category="series" role="tab" aria-selected="false" data-en="Series">Séries</button>
       </div>
     </div>
 
     <div class="hero__panel" data-panel="cinema">
-      <div class="poster-wall" id="wall-longs">
+      <div class="poster-wall is-landing-pending" id="wall-longs">
         <div class="poster-link" data-film="marie-madeleine"><img src="assets/marie-madeleine-v8.jpg" alt="Affiche Marie Madeleine" loading="lazy"></div>
         <a href="https://www.youtube.com/watch?v=crsx7_2vrn0" target="_blank" rel="noopener" class="poster-link" data-film="little-jaffna"><img src="assets/wall/little-jaffna-poster.jpg" alt="Affiche Little Jaffna" loading="lazy"></a>
         <a href="https://www.youtube.com/watch?v=aMZj--wF9ko" target="_blank" rel="noopener" class="poster-link" data-film="les-meutes"><img src="assets/wall/les-meutes-poster.jpg" alt="Affiche Les Meutes" loading="lazy"></a>
@@ -196,6 +196,16 @@
     </div>
 
     <div class="filmo__group">
+      <h3 class="filmo__title" data-en="Series">Séries</h3>
+      <ul class="filmo__list">
+        <li><span class="filmo__film"><em>Maintenant ou Jamais</em> — FC Montfermeil, Ousmane Ly</span><span class="filmo__note" data-en="Release July 2025, HBO Max">Sortie juillet 2025, HBO Max</span><span class="filmo__role" data-en="Production Sound Mixer">Chef opérateur du son</span></li>
+        <li><span class="filmo__film"><em>Stalk</em> (saison 3) — Jean-Charles Paugam, Simon Bouisson</span><span class="filmo__note" data-en="Release September 2025">Sortie septembre 2025</span><span class="filmo__role" data-en="ADR Sound Engineer">Ingénieur du son post-synchros</span></li>
+        <li><span class="filmo__film"><em>Loulou</em> (mini-série) — Alice Vial, Louise Massin</span><span class="filmo__note">ARTE France, 20×7, sortie 2018</span><span class="filmo__role" data-en="Sound Mixer">Mixeur</span></li>
+        <li><span class="filmo__film"><em>Sintonia</em> (saison 3) — Johnny Araújo, Daniela Carvalho</span><span class="filmo__note" data-en="Netflix, 2019">Netflix, 2019</span><span class="filmo__role" data-en="Production Sound Mixer (additional)<br>1 episode">Chef opérateur du son (renforts)<br>1 épisode</span></li>
+      </ul>
+    </div>
+
+    <div class="filmo__group">
       <h3 class="filmo__title" data-en="Short Films">Courts-métrages</h3>
       <ul class="filmo__list">
         <li><span class="filmo__film"><em>Le poids des mots</em> — Massimo Rigi</span><span class="filmo__note" data-en="In post-production">En post-production</span><span class="filmo__role" data-en="Supervising Sound Editor">Chef monteur son</span></li>
@@ -230,16 +240,6 @@
         <li><span class="filmo__film"><em>Les Grands Mythes</em> — François Busnel</span><span class="filmo__note">ARTE France, 20×26 min, 2016</span><span class="filmo__role" data-en="Sound Editor">Monteur son</span></li>
         <li><span class="filmo__film"><em>Gadgo, un prince chez les manouches</em> — Flora Desprat</span><span class="filmo__note">ARTE France, 2016</span><span class="filmo__role" data-en="Production Sound Mixer">Chef opérateur du son</span></li>
         <li><span class="filmo__film"><em>Pianotine</em> — Philippe Ledem</span><span class="filmo__note" data-en="ARTE France, documentary series, 2014">ARTE France, série documentaire, 2014</span><span class="filmo__role" data-en="Production Sound Mixer · Sound Editor">Chef opérateur du son · Monteur son</span></li>
-      </ul>
-    </div>
-
-    <div class="filmo__group">
-      <h3 class="filmo__title" data-en="Series">Séries</h3>
-      <ul class="filmo__list">
-        <li><span class="filmo__film"><em>Maintenant ou Jamais</em> — FC Montfermeil, Ousmane Ly</span><span class="filmo__note" data-en="Release July 2025, HBO Max">Sortie juillet 2025, HBO Max</span><span class="filmo__role" data-en="Production Sound Mixer">Chef opérateur du son</span></li>
-        <li><span class="filmo__film"><em>Stalk</em> (saison 3) — Jean-Charles Paugam, Simon Bouisson</span><span class="filmo__note" data-en="Release September 2025">Sortie septembre 2025</span><span class="filmo__role" data-en="ADR Sound Engineer">Ingénieur du son post-synchros</span></li>
-        <li><span class="filmo__film"><em>Loulou</em> (mini-série) — Alice Vial, Louise Massin</span><span class="filmo__note">ARTE France, 20×7, sortie 2018</span><span class="filmo__role" data-en="Sound Mixer">Mixeur</span></li>
-        <li><span class="filmo__film"><em>Sintonia</em> (saison 3) — Johnny Araújo, Daniela Carvalho</span><span class="filmo__note" data-en="Netflix, 2019">Netflix, 2019</span><span class="filmo__role" data-en="Production Sound Mixer (additional)<br>1 episode">Chef opérateur du son (renforts)<br>1 épisode</span></li>
       </ul>
     </div>
   </section>
@@ -390,6 +390,6 @@
   </div>
 </div>
 
-<script src="script.js?v=32"></script>
+<script src="script.js?v=33"></script>
 </body>
 </html>

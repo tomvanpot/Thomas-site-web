@@ -141,6 +141,10 @@ function playLandingEffect(wallEl) {
       });
 
       wallEl.classList.add('is-landing');
+      // Only relevant for the very first wall-longs call (see the matching
+      // CSS rule): drop the plain-CSS "pending" hidden state now that the
+      // real animation is taking over, so nothing is left relying on it.
+      wallEl.classList.remove('is-landing-pending');
 
       const cleanupId = window.setTimeout(() => {
         wallEl.classList.remove('is-landing');
@@ -360,6 +364,9 @@ function playTextLandingEffect(elements, { baseDelay = 0, stagger = 55 } = {}) {
     void el.offsetWidth; // force reflow so the animation can replay
     el.style.animationDelay = `${baseDelay + i * stagger}ms`;
     el.classList.add('landing-el');
+    // Drop the plain-CSS "pending" hidden state (see matching CSS rule) now
+    // that the real animation is taking over, so nothing is left relying on it.
+    el.classList.remove('is-landing-pending');
   });
 }
 

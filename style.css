@@ -712,6 +712,21 @@ section {
   margin-bottom: 22px;
 }
 
+/* Secondary heading used to split a single filmo__group into sub-sections
+   (e.g. Fiction / Documentaire within Séries) without the visual weight of
+   a full filmo__title. */
+.filmo__subtitle {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a3a19a;
+  margin: 30px 0 10px;
+}
+
+.filmo__group > .filmo__subtitle:first-of-type { margin-top: 0; }
+
 .filmo__list { list-style: none; }
 
 .filmo__list li {

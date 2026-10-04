@@ -266,6 +266,7 @@ body {
 
 .hero__category.is-active {
   opacity: 1;
+  color: #d4b17e;
 }
 
 .poster-wall[hidden],

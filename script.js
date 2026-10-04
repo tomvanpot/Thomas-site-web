@@ -208,11 +208,21 @@ const aproposSections = Array.from(document.querySelectorAll('.apropos'));
 const contactSection = document.getElementById('contact');
 const filmoSection = document.getElementById('filmo');
 
+const navViewLinks = {
+  home: document.getElementById('navFilmsLink'),
+  apropos: document.getElementById('navAproposLink'),
+  filmo: document.getElementById('navCvLink'),
+  contact: document.getElementById('navContactLink'),
+};
+
 function showView(view) {
   homeSections.forEach((el) => { el.hidden = view !== 'home'; });
   aproposSections.forEach((el) => { el.hidden = view !== 'apropos'; });
   if (contactSection) contactSection.hidden = view !== 'contact';
   if (filmoSection) filmoSection.hidden = view !== 'filmo';
+  Object.entries(navViewLinks).forEach(([key, link]) => {
+    if (link) link.classList.toggle('is-active', key === view);
+  });
   window.scrollTo(0, 0);
 }
 

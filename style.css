@@ -124,6 +124,11 @@ body {
   color: var(--accent);
 }
 
+.nav__links a.is-active {
+  opacity: 1;
+  color: #d4b17e;
+}
+
 .nav__lang {
   display: flex;
   align-items: center;

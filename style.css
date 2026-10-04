@@ -268,15 +268,6 @@ body {
   opacity: 1;
 }
 
-.hero__category[data-category="cinema"].is-active::after,
-.hero__category[data-category="docs"].is-active::after,
-.hero__category[data-category="series"].is-active::after {
-  content: '';
-  right: 0;
-  opacity: 1;
-  background: #d4b17e;
-}
-
 .poster-wall[hidden],
 .hero__panel[hidden] {
   display: none;

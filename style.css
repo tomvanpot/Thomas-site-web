@@ -369,19 +369,12 @@ section[hidden] {
   aspect-ratio: auto;
 }
 
-/* Courts posters now range from ~0.70 up to 0.75 in native ratio (after
-   cropping the lot to a consistent size). Fitting them all into a box with
-   `contain` left the taller ones narrower than the rest (contain shrinks to
-   whichever dimension hits the box first, and for these it's always width).
-   Using 7:10 — just under the narrowest poster's ratio — as the box means
-   every poster stays width-constrained (same width, no black bars on the
-   sides), while keeping the top/bottom letterbox bars as small as the
-   narrowest poster allows, instead of the much taller 2:3 box this used to
-   be, which left a lot of dead black space above/below most posters. */
+/* Courts posters now use the exact same box as the longs (3:4, cover) so
+   the mosaic reads as one consistent grid — no more black letterbox bars
+   above/below each poster, just a tight edge-to-edge crop like the longs. */
 .poster-wall .poster--short {
-  aspect-ratio: 7 / 10;
-  object-fit: contain;
-  background: #000;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
 /* For posters whose top edge carries important content (cast/credits,

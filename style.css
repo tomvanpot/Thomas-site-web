@@ -384,6 +384,13 @@ section[hidden] {
   object-position: top;
 }
 
+/* Last row of the courts mosaic — no row underneath, so there's no black
+   letterbox from the box stacking against another row's. Let these show
+   their full poster, uncropped, same as the docs wall. */
+.poster-wall .poster--natural {
+  aspect-ratio: auto;
+}
+
 .poster-wall.is-grouping img {
   animation: poster-group-in 0.35s ease-out both;
 }

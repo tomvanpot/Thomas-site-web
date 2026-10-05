@@ -369,16 +369,19 @@ section[hidden] {
   aspect-ratio: auto;
 }
 
-/* Courts posters: same box for every poster (homogeneous sizing across
-   the mosaic) and `contain` so nothing is ever cropped. The box is 7:10 —
-   just under the narrowest poster's native ratio (Tigre, ~0.70) — which
-   keeps every poster width-constrained (same width, no bars on the sides)
-   while keeping the top/bottom letterbox as small as that narrowest
-   poster allows, instead of the much taller 2:3 box this used to be. */
+/* Courts posters use the exact same box as the longs (3:4, cover) so the
+   mosaic reads as one consistent grid — no black letterbox bars at all,
+   same tight edge-to-edge crop as the longs. */
 .poster-wall .poster--short {
-  aspect-ratio: 7 / 10;
-  object-fit: contain;
-  background: #000;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* Last row of the courts mosaic — no row underneath, so there's no
+   neighbour to stay homogeneous with. Let these show their full poster,
+   uncropped, same as the docs wall. */
+.poster-wall .poster--natural {
+  aspect-ratio: auto;
 }
 
 /* For posters whose top edge carries important content (cast/credits,

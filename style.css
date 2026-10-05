@@ -369,12 +369,12 @@ section[hidden] {
   aspect-ratio: auto;
 }
 
-/* Courts posters now use the exact same box as the longs (3:4, cover) so
-   the mosaic reads as one consistent grid — no more black letterbox bars
-   above/below each poster, just a tight edge-to-edge crop like the longs. */
+/* Courts posters: no forced box at all — each one keeps its own native
+   ratio, same approach as the docs wall above. Nothing gets cropped, and
+   since the box always matches the image exactly there's no letterbox
+   bars either, just the normal grid gap between posters. */
 .poster-wall .poster--short {
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
+  aspect-ratio: auto;
 }
 
 /* For posters whose top edge carries important content (cast/credits,
@@ -382,13 +382,6 @@ section[hidden] {
    only the bottom is trimmed instead. */
 .poster-wall .poster--top {
   object-position: top;
-}
-
-/* Last row of the courts mosaic — no row underneath, so there's no black
-   letterbox from the box stacking against another row's. Let these show
-   their full poster, uncropped, same as the docs wall. */
-.poster-wall .poster--natural {
-  aspect-ratio: auto;
 }
 
 .poster-wall.is-grouping img {

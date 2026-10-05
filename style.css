@@ -369,15 +369,17 @@ section[hidden] {
   aspect-ratio: auto;
 }
 
-/* Courts posters range from 2:3 up to exactly 3:4 in native ratio. Fitting
-   them all into a 3:4 box with `contain` left the taller ones narrower than
-   the rest (contain shrinks to whichever dimension hits the box first, and
-   for these it was always width). Using 2:3 — the narrowest ratio in the
-   set — as the box instead means every poster is always width-constrained,
-   so they all render at the exact same width; only the amount of empty
-   space above/below varies, which is far less noticeable side by side. */
+/* Courts posters now range from ~0.70 up to 0.75 in native ratio (after
+   cropping the lot to a consistent size). Fitting them all into a box with
+   `contain` left the taller ones narrower than the rest (contain shrinks to
+   whichever dimension hits the box first, and for these it's always width).
+   Using 7:10 — just under the narrowest poster's ratio — as the box means
+   every poster stays width-constrained (same width, no black bars on the
+   sides), while keeping the top/bottom letterbox bars as small as the
+   narrowest poster allows, instead of the much taller 2:3 box this used to
+   be, which left a lot of dead black space above/below most posters. */
 .poster-wall .poster--short {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 7 / 10;
   object-fit: contain;
   background: #000;
 }
